@@ -1,17 +1,18 @@
 \section{Robustness: Production Onset as Treatment}
+\label{sec:production}
 
 We re-estimate the design using the start of mineral production as the
 treatment in place of the discovery year, drawing treatment dates from the
 Open Database on Mine Production (the recorded production-start year for each
 African facility, or its first reported output year where no start year is
 given). The grid, outcomes, and estimator are unchanged. Three critical
-minerals carry enough producing facilities for estimation: copper, cobalt,
-and platinum-group metals (PGMs). The 3T group (tantalum, tin, tungsten) is
+minerals carry enough producing facilities for estimation, namely copper,
+cobalt, and platinum-group metals (PGMs). The 3T group (tantalum, tin, tungsten) is
 absent from the industrial-production data, so this test cannot speak to it.
 
-Copper gives the clearest result: across 17 treated hexes with flat
+Copper gives the clearest result. Across 17 treated hexes with flat
 pre-trends, production onset lowers the local count of conflict events
-(Table~\ref{tab:prod_results}, Figure~\ref{fig:prod_copper}). Cobalt points
+(Table~\ref{tab:prod_results}, Appendix Figure~\ref{fig:prod_copper}). Cobalt points
 the same way on a smaller base of 7 hexes, which is reassuring given that
 regional cobalt is mined as a copper by-product. For both minerals the effect
 is on the frequency of events, not on battle deaths, which remain a noisy
@@ -20,7 +21,8 @@ years and several pre-treatment leads are significant, so we read those
 estimates as descriptive only. The production design marks a different moment
 in a mine's life than discovery and covers only industrial operations, so we
 treat it as a separate test of a production-onset mechanism, not a
-replication of the discovery findings.
+replication of the discovery findings. Appendix~\ref{ap:prod_figs} presents the
+event-study figures for all three minerals.
 
 \begin{table}[htbp]
 \centering
@@ -43,33 +45,4 @@ PGMs   & Battle deaths   &  8 & $1.441$  & 0.646 & violated \\
 and cobalt conflict-event effects are significant at the 1\% level.}
 \end{table}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.48\textwidth]{plots/prod_copper_events_count.pdf}
-\includegraphics[width=0.48\textwidth]{plots/prod_copper_best_sum.pdf}
-\caption{Copper production onset: conflict events (left) and battle deaths (right).}
-\label{fig:prod_copper}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.48\textwidth]{plots/prod_cobalt_events_count.pdf}
-\includegraphics[width=0.48\textwidth]{plots/prod_cobalt_best_sum.pdf}
-\caption{Cobalt production onset: conflict events (left) and battle deaths (right).}
-\label{fig:prod_cobalt}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.48\textwidth]{plots/prod_pgms_events_count.pdf}
-\includegraphics[width=0.48\textwidth]{plots/prod_pgms_best_sum.pdf}
-\caption{PGMs production onset: conflict events (left) and battle deaths (right). Pre-trends are violated; estimates are descriptive only.}
-\label{fig:prod_pgms}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\textwidth]{plots/prod_calendar_comparison.pdf}
-\caption{Calendar-time effects of production onset, cobalt and PGMs (conflict events).}
-\label{fig:prod_calendar}
-\end{figure}
+\noindent The event-study figures for these estimates appear in Appendix~\ref{ap:prod_figs}.
