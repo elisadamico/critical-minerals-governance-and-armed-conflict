@@ -254,15 +254,19 @@ One caveat attaches to the chromium event-count result. At 100km it carries eigh
 % [ED C277 / PL C278] Pooled-effects figure removed by agreement of both authors.
 % The underlying table (latex/pooled_effects.tex) remains in Appendix C.
 
-% [PL C279] PL could not read this figure and flagged the substantive issue that
-% the governance interventions land in 2009-2011 while the panel opens in 1997.
-% Connected to C39 (post-2010 subsample). Figure retained pending that decision.
-Figure \ref{fig:calendar} presents the same patterns using a calendar-time specification aligned to policy milestones. Tantalum shows declining conflict events after Dodd-Frank (2010) and the OECD guidelines (2011), consistent with governance frameworks reshaping who participates in local violence. Chromium shows battle deaths increasing without clear policy triggers, consistent with the absence of governance frameworks. PGMs show gradual decline beginning after South Africa's MPRDA.
+% [PL C279] Figure rebuilt in the light theme on the corrected panel, with a
+% caption that explains how to read it. Her second point, that the interventions
+% land in 2009-2011 while the panel opens in 1995, is addressed in the text below
+% rather than by the figure. The post-2010 subsample she raised in C39 remains an
+% open option.
+Figure \ref{fig:calendar} presents the same estimates in calendar time rather than event time, which lets us line the results up against the dates the governance frameworks actually took effect. Tantalum shows conflict events declining through the period following Dodd-Frank (2010) and the OECD Guidance (2011). PGMs decline gradually from the mid-2000s, after South Africa's MPRDA. Chromium conflict events drift downward across the second half of the period, with no turning point at any policy date, which is what the absence of a governance framework would predict. Chromium battle deaths show no calendar-time trend at all. That is worth stating plainly, because the increase in chromium battle deaths reported above is an event-time result, measured relative to each cell's own discovery year. Discoveries are spread across two decades, so an effect that appears ten years after discovery in each cell need not line up with any particular calendar year, and the calendar view averages it away.
+
+These plots should be read with one caveat in mind. Our panel opens in 1995, but the international frameworks arrive between 2009 and 2011, so more than half the observation window precedes the intervention whose effect we are attributing. The event-time estimates do not depend on those dates, since they are anchored to each cell's own discovery year, but the calendar-time alignment is suggestive rather than a test of the policies themselves.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{plots/all_minerals_calendar_comparison.png}
-    \caption{Calendar-time event studies aligned to policy milestones. Vertical lines mark key governance interventions, namely SA MPRDA (2004), iTSCi (2009), Dodd-Frank (2010), OECD guidelines (2011), and first Dodd-Frank reports (2014). Panel (a) shows tantalum (3T governed) with declining conflict after Dodd-Frank. Panel (b) shows chromium (governance gap) with increased battle deaths and no policy triggers. Panel (c) shows PGMs (nationally governed) with gradual decline beginning after MPRDA. See Tables~\ref{tab:cal_tantalum}, \ref{tab:cal_chromium}, and \ref{tab:cal_pgms} for full estimates.}
+    \caption{Calendar-time estimates aligned to policy milestones. Each panel plots the average treatment effect on the treated in each calendar year rather than in event time, so the horizontal axis is the year itself and effects occurring at different points after discovery are pooled within each year. Dotted vertical lines mark the governance interventions, namely South Africa's MPRDA (2004), iTSCi (2009), Dodd-Frank Section 1502 (2010), the OECD Guidance (2011), and the first Dodd-Frank company reports (2014). Shaded bands are 95\% confidence intervals. Panels one and two show conflict events for tantalum and platinum group metals. Panels three and four show conflict events and battle deaths for chromium. Because discoveries are spread across the panel, this view is not well suited to detecting slow-emerging effects, and it should be read alongside the event-time estimates in Figure \ref{fig:main_results} rather than in place of them.}
     \label{fig:calendar}
 \end{figure}
 
@@ -314,7 +318,7 @@ Figure \ref{fig:mech_chromium} shows the actor-level mechanism underlying chromi
     \label{fig:mech_chromium}
 \end{figure}
 
-State-initiated fatalities increase following chromium discovery, by $2.68$ (SE $1.23$) from the tenth post-treatment year, with no significant pre-treatment coefficients. Fatal violence against civilians increases as well, by $0.85$ (SE $0.40$) across post-treatment periods and $1.13$ (SE $0.56$) in the later window. Both effects hold in direction across every spatial scale at which they can be estimated. Formal armed groups, meanwhile, are entirely absent. No treated chromium cell records a single formal group event anywhere in the panel, at any resolution, so there is no variation to estimate. That absence is itself informative, and it is the one claim in this section that requires no estimation at all. Chromium extraction is industrial rather than artisanal, so it offers armed groups none of the dispersed revenue opportunities available around 3T deposits, and there is no certification regime whose capture would be worth contesting.
+State-initiated fatalities increase following chromium discovery, by $2.68$ (SE $1.23$) from the tenth post-treatment year, with no significant pre-treatment coefficients. Fatal violence against civilians increases as well, by $0.85$ (SE $0.43$) across post-treatment periods and $1.13$ (SE $0.54$) in the later window. Both effects hold in direction across every spatial scale at which they can be estimated. Formal armed groups, meanwhile, are entirely absent. No treated chromium cell records a single formal group event anywhere in the panel, at any resolution, so there is no variation to estimate. That absence is itself informative, and it is the one claim in this section that requires no estimation at all. Chromium extraction is industrial rather than artisanal, so it offers armed groups none of the dispersed revenue opportunities available around 3T deposits, and there is no certification regime whose capture would be worth contesting.
 
 The decoupling mechanism therefore operates as follows. Chromium's strategic value draws state forces to secure deposits, but the absence of governance frameworks means this securitization occurs without transparency requirements, conflict-free certification, or international oversight. The result is increased state-initiated lethality and civilian casualties, a ``security paradox'' in which state presence raises deaths rather than reducing them. This supports H4 and identifies the actors driving the decoupling pattern. See Table~\ref{tab:mech_chromium} for full estimates.
 
@@ -332,21 +336,17 @@ Table \ref{tab:mech_combined} summarizes the actor-level findings across governa
 % distinction between the Dir and ATT columns are legible without the R code.
 \input{latex/mechanism_combined.tex}
 
-% TODO: regenerate latex/mechanism_combined.tex on the corrected panel, reporting
-% the dynamic aggregate and the e>=10 window with standard errors, and drop the
-% Dir and Sig Post columns entirely. Dir averaged only the coefficients that
-% reached significance, which selects on the outcome; Sig Post applied a pointwise
-% 1.96 threshold to coefficients for which the package computes a simultaneous
-% critical value of roughly 2.5. The key below describes the intended table.
-\noindent\footnotesize In the Actor Outcome column, \textit{initiator} denotes the side that carried out the violence and \textit{target} the side against which it was directed, following the definitions in Section \ref{sec:data}. ``ev.'' denotes a count of events and ``fat.'' a count of battle deaths. \textit{ATT} is the dynamic Callaway-Sant'Anna aggregate across all post-treatment periods and \textit{ATT (e$\geq$10)} the average from the tenth post-treatment year, each with its standard error. \textit{Sig Pre} counts pre-treatment coefficients falling outside the estimator's simultaneous confidence band. \normalsize
+% [PL C282] DONE. Table regenerated by REM/17_final_tables_figs.R on the
+% corrected panel. Dir and Sig Post columns dropped; the notes block under the
+% table now carries the key.
 
-% [PL C295] PL proposed reporting platinum only here and dropping copper and
-% cobalt as minerals not used elsewhere in the paper. Not applied. Copper and
-% cobalt are the only two production-onset results with flat pre-trends and
-% significant effects, while the PGM estimates fail pre-trends and are already
-% reported as descriptive only, so a platinum-only section would report nothing
-% interpretable. Raised with PL rather than actioned unilaterally.
-\input{latex/production_robustness.tex}
+% [PL C295] Section cut, per her comment and after checking what it contained.
+% She proposed keeping platinum only. Platinum fails pre-trends there and would
+% have left the section reporting a single uninterpretable null, while copper and
+% cobalt are not minerals the paper analyses anywhere else. The point she wanted
+% preserved, that production cannot be tested for our three minerals, is now made
+% in Limitations instead. latex/production_robustness.tex is retained in the repo
+% and the appendix figures in plots/prod_*.pdf are unused but not deleted.
 
 \subsection{Limitations}
 
@@ -355,7 +355,7 @@ Table \ref{tab:mech_combined} summarizes the actor-level findings across governa
 % subsections into continuous prose.
 Our analysis provides a starting point for understanding how governance mediates the mineral-conflict relationship, but several limitations warrant discussion.
 
-Our identification strategy relies on mineral discovery as the treatment, capturing the moment when a location's resource potential becomes known. This approach offers identification advantages because discovery timing is plausibly exogenous to local conflict dynamics, and it allows us to estimate anticipatory effects before extraction begins. However, discovery and active mining likely operate through different mechanisms. Discovery may trigger conflict through expectations of future wealth, speculative land grabs, and positioning by armed groups seeking to control eventual extraction \citep{cust2015dutch, lei2019natural}. Mining, by contrast, generates actual revenue flows, employment, infrastructure development, and sustained interactions between extractive firms, state authorities, and local communities. The development channel of roads, jobs, and services that accompanies active mining could either amplify pacification, through opportunity costs of violence and improved state capacity, or intensify conflict, through grievances over distribution, environmental damage, and displacement \citep{aragon2015mining, kotsadam2018industrial}. There are no publicly available datasets on critical minerals production.
+Our identification strategy relies on mineral discovery as the treatment, capturing the moment when a location's resource potential becomes known. This approach offers identification advantages because discovery timing is plausibly exogenous to local conflict dynamics, and it allows us to estimate anticipatory effects before extraction begins. However, discovery and active mining likely operate through different mechanisms. Discovery may trigger conflict through expectations of future wealth, speculative land grabs, and positioning by armed groups seeking to control eventual extraction \citep{cust2015dutch, lei2019natural}. Mining, by contrast, generates actual revenue flows, employment, infrastructure development, and sustained interactions between extractive firms, state authorities, and local communities. The development channel of roads, jobs, and services that accompanies active mining could either amplify pacification, through opportunity costs of violence and improved state capacity, or intensify conflict, through grievances over distribution, environmental damage, and displacement \citep{aragon2015mining, kotsadam2018industrial}. We cannot test this directly. The Open Database on Mine Production records production-start years for industrial facilities, but none of our three minerals appears in it with enough producing sites to estimate. Copper and cobalt do, and a production-onset design on those two minerals shows lower conflict-event counts after production begins, but neither mineral belongs to any of our governance tiers, so that result speaks to a production mechanism in general rather than to the governance argument here. Testing whether our patterns survive the move from discovery to production awaits data pairing both dates for tantalum, platinum group metals, and chromium.
 
 Alternative mechanisms could generate patterns consistent with our findings, and we cannot fully isolate among them with the current design. The decoupling pattern for chromium could reflect not governance gaps but geological characteristics. Chromium deposits are often associated with large-scale industrial mining operations, concentrating extraction in facilities less susceptible to artisanal mining but potentially more attractive as targets for state securitization. Disentangling governance from geology requires within-mineral variation in institutional frameworks that does not yet exist for chromium. Further, the pacification effects we attribute to Dodd-Frank and related frameworks could instead reflect broader trends in the regions where governed minerals are located. The eastern DRC, for instance, experienced significant international peacekeeping expansion and security sector reform during our study period. While our difference-in-differences design with cell fixed effects absorbs time-invariant regional characteristics, it cannot fully rule out confounding from spatially targeted interventions that coincided with governance implementation.
 
@@ -424,43 +424,7 @@ Figure \ref{fig:africa_hex_grids} illustrates the hexagonal grid structure used 
     \label{fig:africa_hex_grids}
 \end{figure}
 
-\section{Production-Onset Robustness Figures}
-\label{ap:prod_figs}
-\setcounter{table}{0}
-\setcounter{figure}{0}
-
-These figures accompany the production-onset robustness analysis in Section~\ref{sec:production}. Each panel reports Callaway-Sant'Anna event-study estimates for conflict events (left) and battle deaths (right) using production onset as the treatment in place of discovery.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.48\textwidth]{plots/prod_copper_events_count.pdf}
-\includegraphics[width=0.48\textwidth]{plots/prod_copper_best_sum.pdf}
-\caption{Copper production onset: conflict events (left) and battle deaths (right).}
-\label{fig:prod_copper}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.48\textwidth]{plots/prod_cobalt_events_count.pdf}
-\includegraphics[width=0.48\textwidth]{plots/prod_cobalt_best_sum.pdf}
-\caption{Cobalt production onset: conflict events (left) and battle deaths (right).}
-\label{fig:prod_cobalt}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.48\textwidth]{plots/prod_pgms_events_count.pdf}
-\includegraphics[width=0.48\textwidth]{plots/prod_pgms_best_sum.pdf}
-\caption{PGMs production onset: conflict events (left) and battle deaths (right). Pre-trends are violated, so estimates are descriptive only.}
-\label{fig:prod_pgms}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{plots/prod_calendar_comparison.pdf}
-\caption{Calendar-time effects of production onset, cobalt and PGMs (conflict events).}
-\label{fig:prod_calendar}
-\end{figure}
+% [PL C295] Production-onset appendix figures removed with the main-text section.
 
 \section{Full Results}
 \setcounter{table}{0}
