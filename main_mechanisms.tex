@@ -171,16 +171,17 @@ We also record UCDP's classification of each event by type of violence, distingu
 % PL flagged that "who is affected" was ambiguous.
 To investigate the mechanisms behind our main results, we use the UCDP Actor Dataset (v25.1) to identify the organizational type of each conflict participant, distinguishing formal military organizations, political organizations, identity-based groups, state actors, and civilians. Every UCDP event records two sides, so each actor type enters our data in two distinct roles. An actor is an \textit{initiator} when it is the side that carried out the violence, and a \textit{target} when it is the side against which the violence was directed. We construct separate outcomes for each role, so that ``formal group initiator events'' counts events in which a formal armed organization used violence, while ``formal group target events'' counts events in which one was attacked. Each role is measured both as a count of events and as a count of battle deaths. This distinction matters for interpretation. A decline in formal group initiator fatalities means organized armed groups are killing less, whereas a decline in formal group target fatalities means fewer of their members are being killed, and the two need not move together.
 
-% [PL C163] Resolution added to the caption. [PL C155] Map still to be rebuilt to
-% her spec: white background, larger legend text, distinct symbols per mineral,
-% conflict events unlogged. She has offered to build it in ArcGIS given the GIS
-% layers.
+% [PL C155, C163] DONE. Map rebuilt by REM/09_paper_figures.R with a white
+% background, larger legend text, a distinct symbol per mineral, and raw rather
+% than logged conflict counts. The old map (08_viz.R) classified gallium and
+% germanium as the governance-gap tier, which predates the switch to chromium,
+% so it was plotting minerals that are not in the analysis.
 Figure \ref{fig:map} shows the distribution of conflict events and mineral governance tiers across Africa.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{plots/africa_mineral_conflict_map.png}
-    \caption{Conflict events (1997--2018) and mineral governance tiers across Africa, shown at 100km resolution. Hex cells colored by conflict intensity (log scale). Points indicate mineral discovery locations by governance tier, namely 3T governed (international frameworks), nationally governed (state regulation), and governance gap (no frameworks).}
+    \caption{Conflict events (1995--2018) and mineral discoveries across Africa, shown at 100km resolution. Hex cells are shaded by the raw count of conflict events, capped at 100 so the scale stays readable. Symbols mark discovery locations for the three analysed minerals, namely tantalum (international governance), platinum group metals (national governance), and chromium (governance gap). Small grey points mark discoveries of other critical minerals not analysed here.}
     \label{fig:map}
 \end{figure}
 
@@ -222,45 +223,25 @@ Each event-study figure plots these coefficients against event time. Coefficient
 % [PL C256] Placeholder minerals replaced with the final set.
 We first present results for the three governance structure categories, namely internationally governed tantalum, nationally governed platinum group metals, and chromium, which is subject to neither international nor national governance. For each mineral we show results for conflict events and battle deaths at 100km resolution.
 
-% [PL C257] PL asked whether Figures 3-5 can be merged into a single figure, which
-% would make the results far easier to write up. This needs an R rerun and is not
-% done here. The three separate figures remain for now.
-% [PL C259] Captions to be revised once the merged figure exists.
-Figure \ref{fig:tantalum} shows event-study estimates for tantalum, a 3T mineral subject to Dodd-Frank and related governance frameworks.
+% [PL C257] DONE. The three separate paired event studies are replaced by one
+% 3x2 figure, built by REM/09_paper_figures.R.
+%
+% !! WARNING - READ BEFORE EDITING THE RESULTS TEXT BELOW !!
+% This figure is built from the CORRECTED panel (hex_year_panel_100km_critical_fixed.rds).
+% The surrounding prose still describes the OLD estimates, which were computed on
+% a treatment variable corrupted by the reduce()/left_join() bug documented in
+% REM/10_fix_treatment.R. Figure and text therefore disagree. On the corrected
+% data none of the six aggregate ATTs is significant. See REM/11_compare_fix.R
+% for the side-by-side comparison. The results narrative needs rewriting before
+% this section can be circulated.
+Figure \ref{fig:main_results} presents event-study estimates for all three minerals, with conflict events in the left column and battle deaths in the right.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{plots/tantalum_paired_event_study.png}
-    \caption{Event study for tantalum at 100km resolution (3T governed). Panel (a) shows all conflict events declining following discovery, with effects strengthening over time. Panel (b) shows battle deaths (best estimate) declining in later periods. See Tables~\ref{tab:tantalum_all_conflict_events} and \ref{tab:tantalum_battle_deaths_best_} for full estimates.}
-    \label{fig:tantalum}
+    \includegraphics[width=0.92\textwidth]{plots/main_results_merged.png}
+    \caption{Event-study estimates by governance tier at 100km resolution. Rows are tantalum (international governance, 25 treated cells), platinum group metals (national governance, 8 treated cells), and chromium (governance gap, 11 treated cells). The left column shows all conflict events, the right column battle deaths. Grey marks pre-treatment periods and colour marks post-treatment periods, with shaded bands giving 95\% confidence intervals. Estimates use the Callaway-Sant'Anna estimator with never-treated controls.}
+    \label{fig:main_results}
 \end{figure}
-
-Pre-treatment coefficients are close to zero, supporting the parallel trends assumption. Tantalum discovery leads to sustained reductions in conflict, with the effect emerging within the first few post-treatment periods and persisting throughout the observation window. Battle deaths decline in later post-treatment periods, suggesting that reduced conflict frequency eventually translates into reduced lethality as well. This ``pure pacification'' pattern is consistent with international governance disrupting armed group financing and eventually reducing conflict intensity. These results support H1 and H2.
-
-Figure \ref{fig:pgms} shows results for PGMs, which are subject to strong national governance in South Africa.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{plots/pgms_paired_event_study.png}
-    \caption{Event study for platinum group metals at 100km resolution (nationally governed). Panel (a) shows all conflict events declining substantially following discovery. Panel (b) shows battle deaths (best estimate) with no clear trend. See Tables~\ref{tab:pgms_all_conflict_events} and \ref{tab:pgms_battle_deaths_best_} for full estimates.}
-    \label{fig:pgms}
-\end{figure}
-
-PGMs show the strongest and most consistent reduction in conflict events of any mineral we examine. Effects are significant across nearly all post-treatment periods and robust across spatial scales. This pattern is consistent with state monopoly control, under which national governance excludes armed groups from participating in extraction. These results support H3. Battle deaths show no significant trend, which is consistent with our decision not to state a directional prediction for lethality under national governance.
-
-Figure \ref{fig:chromium} presents results for chromium, a strategically important mineral that lacks international governance frameworks.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{plots/chromium_paired_event_study.png}
-    \caption{Event study for chromium at 100km resolution (governance gap). Panel (a) shows all conflict events with no clear trend. Panel (b) shows battle deaths (best estimate) increasing following discovery. See Tables~\ref{tab:chromium_all_conflict_events} and \ref{tab:chromium_battle_deaths_best_} for full estimates.}
-    \label{fig:chromium}
-\end{figure}
-
-% [PL C270, C271] Claims about which actors drive the chromium result have been
-% removed here, since the aggregate estimates cannot identify actors. That
-% evidence appears in the actor-level decomposition below.
-The discovery of chromium does not produce the clear decline in conflict events observed under international and national governance, so H4 is not supported. The results do show increased battle deaths post-treatment, indicating higher lethality when violence occurs, which supports H5. This decoupling pattern of stable events alongside more deaths distinguishes ungoverned strategic minerals from governed ones. The actor-level decomposition in Section \ref{sec:mechanisms} identifies which actors account for the additional deaths.
 
 % [ED C277 / PL C278] Pooled-effects figure removed by agreement of both authors.
 % The underlying table (latex/pooled_effects.tex) remains in Appendix C.
@@ -301,7 +282,7 @@ State-initiated fatalities show a sustained decline following tantalum discovery
 
 \subsubsection{PGMs: Formal Group Exclusion Through State Monopoly}
 
-For PGMs under national governance, the aggregate results show strong reductions in overall conflict events (Figure~\ref{fig:pgms}). The actor-level decomposition reveals the mechanism. Formal armed groups are systematically excluded from the conflict landscape around PGM deposits.
+For PGMs under national governance, the aggregate results show strong reductions in overall conflict events (Figure~\ref{fig:main_results}). The actor-level decomposition reveals the mechanism. Formal armed groups are systematically excluded from the conflict landscape around PGM deposits.
 
 \begin{figure}[H]
     \centering
