@@ -1,0 +1,570 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{natbib}
+\bibliographystyle{agsm}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+% [PL C0] PL suggested two titles. Applied her second option, which carries the
+% governance argument. Her first was "Critical minerals and armed conflict:
+% Evidence from Africa". Previous title was "Minerals, Markets, and Armed
+% Conflict: Critical Minerals in the Modern Green Economy".
+\title{Critical Minerals, Governance and Armed Conflict: \\ Evidence from Africa}
+\author{Elisa D'Amico\thanks{University College Dublin. Email: elisa.damico@ucd.ie} \and P\"aivi Lujala\thanks{University of Oulu}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% [PL C1] Cut to the 200-word journal limit. Recount after the results settle.
+\begin{abstract}
+\noindent The clean energy transition has sharply increased global demand for critical minerals. Yet many critical minerals are concentrated in regions with weak governance and histories of resource-related conflict. Africa, which holds substantial reserves of many critical minerals, sits at the center of this emerging challenge. Despite the strategic importance of these resources, systematic evidence on how critical mineral extraction shapes conflict dynamics remains limited. We analyze mineral discovery and armed conflict across Africa (1995--2018) using staggered difference-in-differences at multiple spatial scales. Our findings indicate that governance structure, and not mineral type alone, shapes conflict outcomes. Discoveries of internationally governed minerals such as tantalum pacify surrounding areas, as do nationally governed platinum group metals. Minerals that fall outside such governance structures show a decoupling pattern of fewer conflicts but higher lethality when violence occurs. Actor-level decomposition reveals that international governance pacifies all actor types, national governance excludes formal armed groups, and governance gaps see formal groups disappear while state-initiated lethality and civilian casualties increase. These results suggest that extending governance frameworks to strategic minerals currently lacking oversight could prevent the emergence of new ``blood minerals'' as the energy transition accelerates.
+\end{abstract}
+
+\section{Introduction}
+
+The global energy transition is reshaping Africa's strategic importance. The continent holds substantial reserves of minerals needed for batteries, semiconductors, and renewable energy infrastructure \citep{iea2021critical}. Yet the relationship between mineral wealth and conflict in Africa remains contested. The conflict literature on mineral resources shows that extractive industries can fuel violence through competition over rents, funding of armed groups, and weakening of state institutions \citep{ross2004does, collier2004greed, lujala2009deadly, lujala2010spoils, fearon2005primary}. More recent work suggests these dynamics may be conditional on governance structures, environmental factors, and the specific characteristics of different minerals \citep{bazzi2019promises, berman2017mine, sanchez2020mining, buhaug2015climate, vonuexkull2016civil, koubi2019climate}. We contribute to this literature by examining how critical minerals\footnote{Critical minerals are those designated by major economies as strategically important for technology and clean energy, and as vulnerable to supply disruption.} managed under different governance structures relate to armed conflict in Africa.
+
+Critical mineral extraction in Africa operates under highly uneven governance structures, with some minerals regulated through international due diligence regimes, others governed by strong national legislation, and still others lacking formal oversight entirely. International initiatives such as Dodd-Frank Section 1502, the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas, and the International Tin Supply Chain Initiative emerged in the early 2010s in response to evidence that armed groups in eastern Democratic Republic of Congo were financing violence through the illicit trade of tin, tantalum, tungsten, and gold (3TG). These frameworks did not ban these minerals. They introduced transparency, traceability, and responsible-sourcing requirements that pressured downstream companies to map supply chains and avoid conflict financing. National governance can also reshape mineral sectors, as illustrated by South Africa's 2002 Mineral and Petroleum Resources Development Act, which replaced a fragmented private mineral-rights regime with state custodianship, licensing, and social and environmental obligations. Yet many critical minerals, chromium among them, remain outside both international and national governance systems, leaving extraction largely unregulated.
+
+These divergent governance structures imply that the consequences of critical mineral discovery for conflict dynamics can vary. To study the relationship between critical minerals and conflict in Africa, we use geocoded data on critical mineral discoveries from 1997 to 2018, combined with conflict event data, at multiple spatial resolutions. We estimate the effect of mineral discovery on both conflict frequency and lethality. To study which actors are involved in the violence that follows discovery, we decompose conflict outcomes by the organizational type of the actors recorded in the UCDP Actor Dataset.
+
+% [PL C40, C46] Mineral set fixed to tantalum / PGMs / chromium, and each mineral
+% now introduced with its uses, African geography, and governance tier.
+We focus on three critical minerals, each subject to a different form of governance.
+
+Tantalum is one of the 3T minerals, alongside tin and tungsten, that fall under international due diligence frameworks. It is used almost entirely in capacitors for consumer electronics and in superalloys for aerospace and turbine components, and it has no close substitute at the performance levels these applications require. African tantalum is concentrated in the Great Lakes Region, above all in the eastern DRC and Rwanda, where much of it is mined artisanally from alluvial and pegmatite deposits by small, mobile workforces. That combination of high value per unit weight, low capital requirements, and dispersed workings is what made tantalum financeable for armed groups in the first place, and what put it at the center of the Dodd-Frank and ITSCI regimes. Tantalum is also the 3T mineral with enough treated grid cells to support estimation at our main resolution. Tin appears in the appendix as supporting evidence, and tungsten is discovered in too few cells, and too late in the panel, to estimate.
+
+Platinum group metals comprise platinum, palladium, rhodium, and their companions, used in catalytic converters, hydrogen fuel cells, and electrolysers, which places them directly in the clean energy transition. Their African production is overwhelmingly South African, drawn from the Bushveld Complex, and extraction requires deep-shaft industrial mining with capital and engineering demands that put it beyond the reach of informal operators. This is the setting the MPRDA governs, and it is why PGMs serve here as the case of strong national governance.
+
+Chromium is processed into ferrochrome and from there into stainless steel, superalloys, and the corrosion-resistant components used across industrial and energy infrastructure. African reserves sit mainly in southern Africa, again with the Bushveld Complex dominant, and in Madagascar and Zimbabwe. Extraction is industrial and open-pit or shallow-shaft rather than artisanal. No equivalent to Dodd-Frank or ITSCI covers chromium, and it is not subject to a national regime comparable to the MPRDA in the countries where our discoveries fall, so it stands here as the governance-gap case.
+
+% [PL C48] Revisit once the results section is final.
+Our central finding is that governance structure appears to mediate the mineral-conflict relationship in systematic ways. We identify three distinct patterns based on the governance regime surrounding each critical mineral. Minerals subject to international governance frameworks show consistent reductions in both conflict events and deaths, and the actor-level decomposition shows this applies across actor types, with state forces, formal armed groups, and civilians all seeing reduced violence. Supply chain transparency requirements appear to pacify areas with 3T minerals, potentially by defunding armed groups through the disruption of their access to mineral revenues \citep{parker2016resource, stoop2018dodd, bloem2022conflict}.
+
+Nationally governed minerals reduce conflict through state monopoly control, with effects concentrated among formal armed groups \citep{cawood2004mineral}. National governance excludes formal armed groups from the conflict landscape without altering state or civilian outcomes.
+
+Strategic minerals lacking governance frameworks exhibit a troubling ``decoupling'' pattern. Conflict events do not fall, but battle deaths rise, so violence becomes deadlier when it occurs. Formal armed groups are absent, while state-initiated fatalities and civilian casualties increase, consistent with state forces asserting control over strategically valuable but institutionally unregulated deposits.
+
+These findings have direct policy implications. As demand grows for minerals central to the energy transition, extending governance frameworks to currently ungoverned strategic minerals could prevent the emergence of new resource conflicts, or the exacerbation of existing ones.
+
+% [PL C409 / ED C410] Placeholder. Both authors flagged this as needing substance.
+Our paper contributes to the large literature on \ldots
+
+% [PL C61] Check all cross-references once the section merge is settled.
+The rest of the paper is structured as follows. Section \ref{sec:governance} provides a brief introduction to the different governance frameworks under which critical minerals are governed in Africa and states our hypotheses. Section \ref{sec:data} describes our data and methodology. Section \ref{sec:results} presents the results and discusses the study's limitations. Section \ref{sec:discussion} discusses the implications of our findings, and Section \ref{sec:conclusion} provides concluding remarks and directions for further research.
+
+\section{Critical Minerals, Governance Structures and Armed Conflict}
+\label{sec:governance}
+
+% [PL C77] PL rewrote this section without track changes, so it is a fresh draft
+% rather than an edit of the previous "Governance-Value Nexus" section.
+
+Mining of critical minerals in Africa is governed under different frameworks. Some minerals fall under international due diligence,\footnote{Due diligence refers to the process by which companies identify, assess, and mitigate risks in their mineral supply chains, including risks of conflict financing and human rights abuse.} others are subject to strong national governance, while others still lack such frameworks altogether.
+
+The international due diligence initiatives Dodd-Frank Section 1502, the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas (OECD Due Diligence Guidance for Conflict Minerals hereafter), and the International Tin Supply Chain Initiative (ITSCI) emerged from different origins but converged on curtailing armed groups' access to conflict funding from mineral exploitation in the eastern Democratic Republic of Congo (DRC). In the early 2000s, civil society organizations and advocacy groups, the UN Security Council, and the UN Group of Experts highlighted illegal exploitation and trade in tin, tantalum, tungsten, and gold (3TG) by armed groups in the war-torn eastern DRC \citep{unsc2002panel, globalwitness2010gun, vogel2016terr}. This led to international pressure to ban mineral exports from the DRC and, more broadly, from the Great Lakes Region. The three initiatives established in the early 2010s did not seek to ban conflict minerals. Instead, they created pressure and guidance for responsible mineral sourcing through transparency and tracing, along the lines of the Kimberley Process for diamonds \citep{grant2012kimberley}.
+
+In response to calls to curtail rebel access to conflict minerals, Dodd-Frank Section 1502 was enacted as part of the Dodd-Frank Wall Street Reform and Consumer Protection Act, passed by the US Congress and signed into law in 2010. Section 1502 includes a legal disclosure requirement for publicly listed US-regulated manufacturing companies that use 3TG minerals in their products. Such companies must investigate whether these minerals originated in the DRC or adjoining countries, assess whether their sourcing may have contributed to conflict, and disclose their findings annually \citep{whitney2015conflict}. The legislation aimed at curtailing the black market and its negative effects, including human rights abuses, in the DRC. Dodd-Frank Section 1502 functions primarily as a transparency mechanism, creating strong incentives for US-regulated manufacturing companies to avoid opaque supply chains and invest in responsible sourcing programs. Its disclosure requirement has pushed companies to map their supply chains, adopt the OECD Due Diligence Guidance for Conflict Minerals, and rely on upstream tracing schemes like ITSCI.
+
+ITSCI is the International Tin Association's traceability and due diligence program for tin, tantalum, and tungsten (3T) minerals sourced from the Great Lakes Region. It started as a pilot in eastern DRC in 2010 and was formalized in 2011, the same year Dodd-Frank Section 1502 came into force. ITSCI operates at mine sites, trading points, and export hubs, tracking minerals from their origin and seeking to identify risks related to conflict financing or human rights abuses \citep{postma2021itsci}. In practice, ITSCI tags minerals at the mining site and traces their movement throughout the supply chain, recording these in a shared database and reporting system that companies use to demonstrate responsible sourcing. It also investigates incidents and trains local authorities. The program currently covers around 3,000 mines across Burundi, DRC, Rwanda, and Uganda \citep{itsci2026}.
+
+The OECD Due Diligence Guidance for Conflict Minerals is a global standard for responsible mineral sourcing, providing a five-step due diligence framework. The first edition was published in 2011 and coincided with the passage of Dodd-Frank Section 1502, thereby providing companies with a practical method for compliance. Although the Guidance originally centered on 3TG supply chains in the Great Lakes Region, subsequent revisions have clarified that it applies to all minerals globally. The framework provides voluntary due diligence standards for companies sourcing minerals from conflict-affected and high-risk areas, defined broadly to include regions experiencing armed conflict, widespread violence, political repression, institutional weakness, insecurity, or human rights abuses \citep{cardona2024due}.
+
+South Africa's Mineral and Petroleum Resources Development Act (MPRDA), enacted in 2002, is an example of a national mineral governance structure. It represents a fundamental restructuring of the country's mineral governance system. Prior to the MPRDA, South Africa's system allowed landowners or companies to hold private mineral rights outright. This had resulted in fragmentation, restricted government oversight, and entrenched inequalities rooted in colonial and apartheid-era property regimes. The MPRDA replaced this system by vesting all mineral rights in the state, establishing a licensing regime, and embedding environmental and social responsibility obligations to ensure a more accessible, regulated, and socially responsive extractive sector \citep{cawood2004mineral, cawood2004investment}.
+
+Finally, some critical minerals in Africa fall outside international and national governance frameworks. No equivalent to Dodd-Frank or ITSCI exists for chromium mining and supply chains, so extraction occurs without the transparency requirements or conflict-free certification that govern 3T mining and trade. Critical minerals are therefore governed under very different structures across Africa. We exploit these differences and propose that the effect of critical mineral discovery on conflict depends on that structure. Figure \ref{fig:dag} summarizes our framework and hypotheses.
+
+% [PL C78] Standing caveat: hypotheses and surrounding text may need revision once
+% the results are final.
+
+The international due diligence frameworks seek to disrupt revenue flows to armed groups, formalize extraction through certified supply chains, and raise the costs of violence by attaching reputational and legal risks to buyers. We thus expect that international governance will reduce both the frequency of conflict and its lethality by pacifying armed groups, thereby reducing civilian suffering.
+
+\begin{quote}
+\textbf{H1:} The discovery of critical minerals subject to international governance frameworks reduces the number of conflict events.
+\end{quote}
+
+\begin{quote}
+\textbf{H2:} The discovery of critical minerals subject to international governance frameworks reduces battle-related deaths.
+\end{quote}
+
+We expect that national governance also reduces conflict, through state monopoly control and the limited opportunities for armed groups to contest state authority over extraction. Because national governance operates through domestic institutions rather than international supply chain pressure, pacification effects may be weaker or more geographically concentrated than under international frameworks. At the actor level, we expect formal armed groups to be specifically excluded, as state monopoly control targets organized challengers to extraction, reducing their activity both as initiators and as targets of violence.
+
+\begin{quote}
+\textbf{H3:} The discovery of critical minerals subject to strong national governance reduces conflict events.
+\end{quote}
+
+% [PL C79] PL asked whether to add a battle-deaths hypothesis for the national
+% tier. We make no directional prediction here, for the reason given below.
+% Flagged for her decision.
+We do not state a corresponding prediction for battle deaths under national governance. State monopoly control gives a clear expectation about which actors are present, and therefore about the frequency of events, but no clear expectation about the lethality of the violence that remains.
+
+% [PL C81] PL asked whether to simplify the governance-gap hypotheses. Note that
+% H4 is not supported by our own chromium results, which show no clear decline in
+% events. Options are to drop H4 and make this a lethality-only prediction, or to
+% keep it and report it as unsupported. Currently kept and reported as unsupported.
+% [PL C82] Rewrote the passage on why formal groups are absent. The previous
+% version turned on a double negation that PL flagged as unreadable.
+We expect critical minerals lacking a governance framework to exhibit a ``decoupling'' pattern, as the combination of high value and low oversight attracts state forces seeking to secure extraction sites. Formal armed groups have little foothold in this setting. Extraction of these minerals is industrial rather than artisanal, so it offers armed groups none of the dispersed, low-capital revenue opportunities that sustain them around 3T deposits, and there is no certification regime whose capture would be worth contesting. The expected result is fewer conflicts overall but deadlier ones, driven by state-initiated violence and civilian casualties.
+
+\begin{quote}
+\textbf{H4:} The discovery of critical minerals lacking governance frameworks reduces conflict events.
+\end{quote}
+
+\begin{quote}
+\textbf{H5:} The discovery of critical minerals lacking governance frameworks increases battle deaths.
+\end{quote}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth, trim=150 50 150 70, clip]{plots_prerev/governance_value_dag.png}
+    \caption{Theoretical pathways from mineral discovery to conflict outcomes. The effect of discovery depends on the governance regime, and each pathway produces distinct outcomes for conflict frequency and lethality.}
+    \label{fig:dag}
+\end{figure}
+
+\section{Data and Methods}
+\label{sec:data}
+
+\subsection{Data}
+
+Our dataset covers the years 1995--2018, with mineral discoveries recorded from 1997 onward, and we use hexagonal grid-year cells that cover the entire African continent as the unit of study. We construct hexagonal grid cells at seven spatial resolutions (25km to 300km diameter) to test robustness across scales. The main analysis uses 100km resolution, which balances local precision with sufficient conflict variation for estimation. Appendix Figure \ref{fig:africa_hex_grids} illustrates the grid structure at 50km and 300km resolutions, and Appendix Tables \ref{tab:tantalum_robustness}--\ref{tab:pgms_robustness} report results across all spatial scales.
+
+% [PL C115] Descriptive figures computed from
+% REM/data/hex_year_panel_100km_critical.rds.
+At 100km resolution the continent is covered by 3,658 hexagonal cells, giving 87,792 cell-years. Discoveries are rare and spatially concentrated. Across all critical minerals in the database, 227 cells, or 6.2 percent of the total, record at least one discovery during the study period, spread over 316 cell-years. The three minerals analyzed here account for a small share of these. Tantalum is discovered in 25 cells, chromium in 11, and platinum group metals in 8. Tin, which we report in the appendix, is discovered in 12 cells. Tungsten reaches only 3 cells, with the first in 2013, which leaves too short a post-treatment window and too little variation for estimation, and it is therefore excluded.
+
+Conflict is also sparse in the cells that receive discoveries, and unevenly so across the three tiers. Over the full panel the 25 tantalum cells record 335 conflict events and 12,664 battle deaths, with some conflict in 10.2 percent of their cell-years. The 8 PGM cells record 41 events and 286 deaths, with conflict in 6.2 percent of cell-years. The 11 chromium cells record 14 events and 35 deaths in total, with conflict in 2.7 percent of cell-years. Estimates for the nationally governed and governance-gap tiers therefore rest on a small number of treated cells and very few conflict events, and we return to what this implies for interpretation in Section \ref{sec:results}.
+
+% [PL C115] Partly addressed. Still outstanding: the S&P inclusion criterion for
+% an exploration record to count as a discovery, and the country distribution of
+% discoveries. The latter needs a spatial join against national boundaries, which
+% requires the sf package (not currently installed). The UCDP country field in the
+% panel is populated only for cells that record conflict, so it cannot stand in.
+To study the relation between critical minerals and violent conflict, we combine two data sources. First, mineral discovery locations come from the S\&P Global Market Intelligence database, which provides geocoded records of mineral exploration and discovery across Africa. We draw on 22 critical minerals recorded in the database, of which tantalum, platinum group metals, and chromium form the basis of the analysis reported here. Coverage runs to 2018, which sets the end of our study period.
+
+% [PL C116] Rationale for discovery rather than production spelled out.
+We focus on discoveries rather than production for two reasons. The first is timing. Discovery precedes extraction by years or decades, so it captures the point at which expectations about a location's mineral wealth change, before any of the roads, jobs, or revenue flows that accompany an operating mine can confound the comparison. The second concerns identification. Where a firm chooses to open a mine is not independent of local conditions, since companies avoid areas they judge too insecure to operate in, which means production onset is partly a consequence of the conflict environment we are trying to explain. The location of a mineral deposit, by contrast, is fixed by geology. What varies is when exploration happens to confirm it, and that timing is driven largely by world prices, exploration budgets, and survey technology rather than by conditions in the surrounding grid cell. Treating the confirmation year as the treatment date therefore comes closer to an as-if random assignment of when a place becomes known to be mineral-rich.
+
+% [PL C119] Inclusion criteria, geocoding, and the battle-deaths definition added.
+Second, conflict data come from the Uppsala Conflict Data Program Georeferenced Event Dataset (UCDP-GED v25.1) \citep{sundberg2013ucdp, pettersson2021organized}. UCDP-GED records individual instances of lethal organized violence, defined as the use of armed force between two organized parties resulting in at least one death. Events enter the dataset only if they belong to a conflict dyad that passes UCDP's annual threshold of 25 battle-related deaths, so isolated violence outside an active organized conflict is not captured. Each event carries a date and a geographic coordinate, together with a precision code recording how exactly the location is known, ranging from an exact site to a first-order administrative area or an entire country. We retain events geocoded at least to the level of a populated place or a second-order administrative unit, so that assignment to a grid cell is meaningful, and we assign each retained event to the hexagonal cell containing its coordinate.
+
+From these data we code our primary dependent variables, namely (1) conflict event counts per grid cell, which capture overall conflict frequency, and (2) battle deaths per grid cell, which capture conflict intensity and lethality. Battle deaths are the fatalities UCDP attributes to a given event, counting combatants on both sides together with civilians killed in the course of the fighting. UCDP publishes low, best, and high estimates for each event, reflecting the range across the underlying source reports. We use the best estimate throughout, and we return in Section \ref{sec:results} to the uncertainty this introduces.
+
+% [PL C135] Justified. The violence-type split is not used in the main results,
+% which run on total event counts, but it does carry the spatial-scale robustness
+% tables in Appendix A. Stated here so the reader knows where it appears.
+We also record UCDP's classification of each event by type of violence, distinguishing state-based violence between a government and an armed opposition, non-state violence between two non-government actors, and one-sided violence against civilians. The main results use total event counts, since the three governance tiers differ in which types of violence occur at all near their deposits and a common outcome keeps them comparable. The disaggregation by violence type carries the spatial-scale robustness tables in Appendix \ref{sec:scales}, where it shows at which scales each tier's effect is concentrated in which kind of violence.
+
+% [PL C143, C282] Actor definitions moved here from the mechanisms section, where
+% PL flagged that "who is affected" was ambiguous.
+To investigate the mechanisms behind our main results, we use the UCDP Actor Dataset (v25.1) to identify the organizational type of each conflict participant, distinguishing formal military organizations, political organizations, identity-based groups, state actors, and civilians. Every UCDP event records two sides, so each actor type enters our data in two distinct roles. An actor is an \textit{initiator} when it is the side that carried out the violence, and a \textit{target} when it is the side against which the violence was directed. We construct separate outcomes for each role, so that ``formal group initiator events'' counts events in which a formal armed organization used violence, while ``formal group target events'' counts events in which one was attacked. Each role is measured both as a count of events and as a count of battle deaths. This distinction matters for interpretation. A decline in formal group initiator fatalities means organized armed groups are killing less, whereas a decline in formal group target fatalities means fewer of their members are being killed, and the two need not move together.
+
+% [PL C163] Resolution added to the caption. [PL C155] Map still to be rebuilt to
+% her spec: white background, larger legend text, distinct symbols per mineral,
+% conflict events unlogged. She has offered to build it in ArcGIS given the GIS
+% layers.
+Figure \ref{fig:map} shows the distribution of conflict events and mineral governance tiers across Africa.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{plots_prerev/africa_mineral_conflict_map.png}
+    \caption{Conflict events (1997--2018) and mineral governance tiers across Africa, shown at 100km resolution. Hex cells colored by conflict intensity (log scale). Points indicate mineral discovery locations by governance tier, namely 3T governed (international frameworks), nationally governed (state regulation), and governance gap (no frameworks).}
+    \label{fig:map}
+\end{figure}
+
+\subsection{Empirical Strategy}
+
+% [PL C167] PL drafted the plain-language explanation below. Still missing is the
+% guidance on how to read the event-study figures (see the flagged sentence at the
+% end of this subsection).
+We estimate staggered difference-in-differences models using the approach of \citet{callaway2021difference}, which addresses bias from heterogeneous treatment timing \citep[see also][]{goodman2021difference, sun2021estimating}. Staggered difference-in-differences allows us to follow each grid cell over time and, if there is a mineral discovery in a given year, to compare that cell and its subsequent grid-years with cells that never experience a discovery anywhere in the panel.\footnote{The estimator can draw its comparison group either from cells not yet treated at a given point or from cells never treated at all. We use the never-treated pool throughout, which is the more conservative choice here because discovery cells are few and their treatment years are spread across the panel.} Put differently, staggered difference-in-differences compares what happens to different grid cells over time when they are treated at different moments, and uses those timing differences to estimate the treatment effect. The strength of this method is that it isolates the effect of mineral discovery on our conflict outcomes from other changes happening over time.
+
+In our analysis, treatment is defined as the first mineral discovery in a grid cell. We estimate average treatment effects on the treated (ATT) for each post-treatment period. Our main specifications take the form
+
+% [PL C217] Outcome notation generalized so it covers the actor-level outcomes as
+% well as event counts and battle deaths.
+\begin{equation}
+Y_{it} = \alpha_i + \lambda_t + \sum_{k=-K}^{K} \beta_k \cdot \text{Discovery}_{it}^k + \varepsilon_{it}
+\end{equation}
+
+\noindent where $Y_{it}$ is the outcome in grid cell $i$ and year $t$, $\alpha_i$ are cell fixed effects, $\lambda_t$ are year fixed effects, and $\text{Discovery}_{it}^k$ is an indicator equal to one when cell $i$ is $k$ periods from first mineral discovery (with $k < 0$ for pre-treatment and $k \geq 0$ for post-treatment periods). In the aggregate analysis $Y_{it}$ is either the count of conflict events or the number of battle deaths. In the actor-level analysis it is the count of events or deaths for a given actor type in a given role, as defined above. The coefficients $\beta_k$ capture the dynamic treatment effects, with pre-treatment coefficients providing a test of parallel trends. We report results using the Callaway-Sant'Anna estimator, which aggregates group-time average treatment effects on the treated into event-study coefficients while accounting for heterogeneous treatment timing.
+
+The identifying assumption for the impact of mineral discovery on our conflict outcomes is parallel trends. This means that prior to any grid cell being treated, all grid cells have roughly the same conflict trends over time up until the treated cell's discovery year. Put differently, if no grid cell had ever experienced a discovery, all grid cells would have continued to evolve in parallel. Any deviation after treatment is then attributed to the discovery rather than to other unrelated trends. We assess parallel trends by examining pre-treatment coefficients. Our specifications generally satisfy parallel trends, with most minerals showing zero to few significant pre-treatment periods.
+
+% [PL C167] TO FINISH: explain how to read the event-study figures. PL's
+% placeholder read: "In our figures, parallel trends show as a flat line... and
+% treatment effect as departure from this line..."
+Each event-study figure plots these coefficients against event time. Coefficients to the left of zero describe the years before discovery and should sit close to the horizontal line at zero if parallel trends hold. Coefficients to the right of zero describe the years after discovery, and a departure from the zero line there is the estimated treatment effect. Vertical bars give 95\% confidence intervals, so an interval that excludes zero indicates an effect distinguishable from no change.
+
+% =====================================================================
+% [PL C255] Sections 4 (Results), 5 (Mechanisms) and 6 (Production
+% robustness) merged into a single Results section, with the study's
+% limitations as the final subsection, per PL's proposal. Discussion is
+% retained as its own section, since C255 named only sections 4-6.
+% =====================================================================
+\section{Results}
+\label{sec:results}
+
+\subsection{Aggregate Effects by Governance Tier}
+
+% [PL C256] Placeholder minerals replaced with the final set.
+We first present results for the three governance structure categories, namely internationally governed tantalum, nationally governed platinum group metals, and chromium, which is subject to neither international nor national governance. For each mineral we show results for conflict events and battle deaths at 100km resolution.
+
+% [PL C257] PL asked whether Figures 3-5 can be merged into a single figure, which
+% would make the results far easier to write up. This needs an R rerun and is not
+% done here. The three separate figures remain for now.
+% [PL C259] Captions to be revised once the merged figure exists.
+Figure \ref{fig:tantalum} shows event-study estimates for tantalum, a 3T mineral subject to Dodd-Frank and related governance frameworks.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots_prerev/tantalum_paired_event_study.png}
+    \caption{Event study for tantalum at 100km resolution (3T governed). Panel (a) shows all conflict events declining following discovery, with effects strengthening over time. Panel (b) shows battle deaths (best estimate) declining in later periods. See Tables~\ref{tab:tantalum_all_conflict_events} and \ref{tab:tantalum_battle_deaths_best_} for full estimates.}
+    \label{fig:tantalum}
+\end{figure}
+
+Pre-treatment coefficients are close to zero, supporting the parallel trends assumption. Tantalum discovery leads to sustained reductions in conflict, with the effect emerging within the first few post-treatment periods and persisting throughout the observation window. Battle deaths decline in later post-treatment periods, suggesting that reduced conflict frequency eventually translates into reduced lethality as well. This ``pure pacification'' pattern is consistent with international governance disrupting armed group financing and eventually reducing conflict intensity. These results support H1 and H2.
+
+Figure \ref{fig:pgms} shows results for PGMs, which are subject to strong national governance in South Africa.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots_prerev/pgms_paired_event_study.png}
+    \caption{Event study for platinum group metals at 100km resolution (nationally governed). Panel (a) shows all conflict events declining substantially following discovery. Panel (b) shows battle deaths (best estimate) with no clear trend. See Tables~\ref{tab:pgms_all_conflict_events} and \ref{tab:pgms_battle_deaths_best_} for full estimates.}
+    \label{fig:pgms}
+\end{figure}
+
+PGMs show the strongest and most consistent reduction in conflict events of any mineral we examine. Effects are significant across nearly all post-treatment periods and robust across spatial scales. This pattern is consistent with state monopoly control, under which national governance excludes armed groups from participating in extraction. These results support H3. Battle deaths show no significant trend, which is consistent with our decision not to state a directional prediction for lethality under national governance.
+
+Figure \ref{fig:chromium} presents results for chromium, a strategically important mineral that lacks international governance frameworks.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots_prerev/chromium_paired_event_study.png}
+    \caption{Event study for chromium at 100km resolution (governance gap). Panel (a) shows all conflict events with no clear trend. Panel (b) shows battle deaths (best estimate) increasing following discovery. See Tables~\ref{tab:chromium_all_conflict_events} and \ref{tab:chromium_battle_deaths_best_} for full estimates.}
+    \label{fig:chromium}
+\end{figure}
+
+% [PL C270, C271] Claims about which actors drive the chromium result have been
+% removed here, since the aggregate estimates cannot identify actors. That
+% evidence appears in the actor-level decomposition below.
+The discovery of chromium does not produce the clear decline in conflict events observed under international and national governance, so H4 is not supported. The results do show increased battle deaths post-treatment, indicating higher lethality when violence occurs, which supports H5. This decoupling pattern of stable events alongside more deaths distinguishes ungoverned strategic minerals from governed ones. The actor-level decomposition in Section \ref{sec:mechanisms} identifies which actors account for the additional deaths.
+
+% [ED C277 / PL C278] Pooled-effects figure removed by agreement of both authors.
+% The underlying table (latex/pooled_effects.tex) remains in Appendix C.
+
+% [PL C279] PL could not read this figure and flagged the substantive issue that
+% the governance interventions land in 2009-2011 while the panel opens in 1997.
+% Connected to C39 (post-2010 subsample). Figure retained pending that decision.
+Figure \ref{fig:calendar} presents the same patterns using a calendar-time specification aligned to policy milestones. Tantalum shows declining conflict after Dodd-Frank (2010) and the OECD guidelines (2011), consistent with governance frameworks driving pacification. Chromium shows battle deaths increasing without clear policy triggers, consistent with the absence of governance frameworks. PGMs show gradual decline beginning after South Africa's MPRDA.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots_prerev/all_minerals_calendar_comparison.png}
+    \caption{Calendar-time event studies aligned to policy milestones. Vertical lines mark key governance interventions, namely SA MPRDA (2004), iTSCi (2009), Dodd-Frank (2010), OECD guidelines (2011), and first Dodd-Frank reports (2014). Panel (a) shows tantalum (3T governed) with declining conflict after Dodd-Frank. Panel (b) shows chromium (governance gap) with increased battle deaths and no policy triggers. Panel (c) shows PGMs (nationally governed) with gradual decline beginning after MPRDA. See Tables~\ref{tab:cal_tantalum}, \ref{tab:cal_chromium}, and \ref{tab:cal_pgms} for full estimates.}
+    \label{fig:calendar}
+\end{figure}
+
+\subsection{Mechanisms: Actor-Level Decomposition}
+\label{sec:mechanisms}
+
+% [PL C282] Rewritten opener. The ambiguous "who is affected" framing is replaced
+% with the initiator/target distinction defined in Section 3.1.
+The aggregate results establish that governance structure shapes the mineral-conflict relationship, but they treat all violence as equivalent. They cannot say which kinds of actors are doing the killing, or which are being killed. We address this by decomposing conflict outcomes by actor type and role using the UCDP Actor Dataset (v25.1), following the initiator and target definitions set out in Section \ref{sec:data}. For each mineral we estimate separate event-study models for formal armed group activity, both as initiators and as targets, for state-initiated violence, and for the targeting of civilians.
+
+The set of actor outcomes varies by mineral depending on data availability. Formal armed groups show no variation in treated hexagons for tantalum and chromium at 100km, meaning too few treated units record any formal group activity at all, so these minerals support only state and civilian outcomes. PGMs, which have richer conflict data in treated hexagons, support estimation across all actor types.
+
+\subsubsection{Tantalum: Universal Pacification}
+
+Figure \ref{fig:mech_tantalum} presents the actor-level decomposition for tantalum. Under international governance, all estimable actor outcomes decline.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{plots_prerev/mechanism_tantalum_actors.png}
+    \caption{Actor-level mechanism for tantalum (3T governed, 100km). State-initiated fatalities decline significantly (8 significant post-treatment periods). Civilian targeting, both events and fatalities, declines (8 and 5 significant periods respectively). Formal armed groups have no variation in treated hexagons and so cannot be estimated.}
+    \label{fig:mech_tantalum}
+\end{figure}
+
+State-initiated fatalities show a sustained decline following tantalum discovery, with 8 significant post-treatment periods. The targeting of civilians declines in both frequency (8 significant periods) and lethality (5 significant periods). This broad pacification is consistent with international governance operating through supply chain transparency. By disrupting the revenue flows that sustain all parties to conflict, Dodd-Frank and related frameworks reduce violence regardless of which actors are involved. The pattern supports H1 and H2. See Table~\ref{tab:mech_tantalum} for full estimates.
+
+\subsubsection{PGMs: Formal Group Exclusion Through State Monopoly}
+
+For PGMs under national governance, the aggregate results show strong reductions in overall conflict events (Figure~\ref{fig:pgms}). The actor-level decomposition reveals the mechanism. Formal armed groups are systematically excluded from the conflict landscape around PGM deposits.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{plots_prerev/mechanism_pgms_actors.png}
+    \caption{Actor-level mechanism for PGMs (nationally governed, 100km). Full decomposition across formal armed groups (as initiators and as targets), state actors, and civilians. The dominant pattern is the collapse of formal group-initiated fatalities (12 significant post-treatment periods, all negative). Formal groups as targets also decline. State-initiated and civilian-targeted outcomes show limited significant variation.}
+    \label{fig:mech_pgms}
+\end{figure}
+
+The strongest result is the collapse of formal group-initiated fatalities, with 12 significant post-treatment periods showing negative effects, the most robust actor-level finding for any mineral. Formal armed groups are therefore killing far less around PGM deposits after discovery. They are also attacked less often, with formal groups as targets declining across 4 significant periods. By contrast, state-initiated and civilian-targeted outcomes show no significant post-treatment effects, indicating that national governance operates on organized challengers to extraction rather than suppressing all violence uniformly. This selective exclusion is consistent with H3. The state's monopoly over PGM extraction makes it unprofitable and dangerous for formal armed groups to contest access, while state and civilian outcomes remain largely unaffected. See Table~\ref{tab:mech_pgms} for full estimates.
+
+\subsubsection{Chromium: State Lethality and the Decoupling Mechanism}
+
+Figure \ref{fig:mech_chromium} shows the actor-level mechanism underlying chromium's decoupling pattern.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{plots_prerev/mechanism_chromium_actors.png}
+    \caption{Actor-level mechanism for chromium (ungoverned strategic, 100km). State-initiated fatalities increase significantly (7 significant post-treatment periods, positive). Civilian fatalities increase (5 significant periods, positive). Formal armed groups are entirely absent, with no variation in treated hexagons.}
+    \label{fig:mech_chromium}
+\end{figure}
+
+State-initiated fatalities increase following chromium discovery, with 7 significant post-treatment periods showing positive effects. Civilian fatalities also increase, across 5 significant periods. Formal armed groups, meanwhile, are entirely absent from chromium-adjacent hexagons at 100km. There is no variation in formal group activity to estimate, indicating that these groups simply do not operate near chromium deposits. That absence is itself informative. Chromium extraction is industrial rather than artisanal, so it offers armed groups none of the dispersed revenue opportunities available around 3T deposits, and there is no certification regime whose capture would be worth contesting.
+
+The decoupling mechanism therefore operates as follows. Chromium's strategic value draws state forces to secure deposits, but the absence of governance frameworks means this securitization occurs without transparency requirements, conflict-free certification, or international oversight. The result is increased state-initiated lethality and civilian casualties, a ``security paradox'' in which state presence raises deaths rather than reducing them. This supports H5 and identifies the actors driving the decoupling pattern. See Table~\ref{tab:mech_chromium} for full estimates.
+
+\subsubsection{Mechanism Summary}
+
+Table \ref{tab:mech_combined} summarizes the actor-level findings across governance tiers. The pattern is systematic.
+
+\begin{itemize}
+    \item \textbf{International governance (tantalum).} All estimable actor outcomes decline. State-initiated fatalities down, events targeting civilians down, civilian fatalities down.
+    \item \textbf{National governance (PGMs).} Formal groups excluded both as initiators (12 significant periods) and as targets. State and civilian outcomes unaffected. State monopoly control operates on organized challengers.
+    \item \textbf{Governance gap (chromium).} Formal groups absent, but state lethality increases and civilians bear the cost. Governance gaps do not mean the absence of state actors. They mean the absence of \textit{constraints} on state actors.
+\end{itemize}
+
+% [PL C282] Key added below the table so the Actor Outcome abbreviations and the
+% distinction between the Dir and ATT columns are legible without the R code.
+\input{latex_prerev/mechanism_combined.tex}
+
+\noindent\footnotesize In the Actor Outcome column, \textit{initiator} denotes the side that carried out the violence and \textit{target} the side against which it was directed, following the definitions in Section \ref{sec:data}. ``ev.'' denotes a count of events and ``fat.'' a count of battle deaths. \textit{Sig Post} and \textit{Sig Pre} count the individual post- and pre-treatment period coefficients significant at $p<0.05$. \textit{Dir} reports the sign of the significant post-treatment coefficients only, whereas \textit{ATT} is the simple Callaway-Sant'Anna aggregate over all post-treatment periods. The two columns therefore answer different questions and need not agree in sign. \normalsize
+
+% [PL C295] PL proposed reporting platinum only here and dropping copper and
+% cobalt as minerals not used elsewhere in the paper. Not applied. Copper and
+% cobalt are the only two production-onset results with flat pre-trends and
+% significant effects, while the PGM estimates fail pre-trends and are already
+% reported as descriptive only, so a platinum-only section would report nothing
+% interpretable. Raised with PL rather than actioned unilaterally.
+\input{latex_prerev/production_robustness.tex}
+
+\subsection{Limitations}
+
+% [ED C308 / PL C255] Both authors asked for this to be toned down. PL cut the
+% long 2018-cutoff passage and the production-onset paragraph, and flattened the
+% subsections into continuous prose.
+Our analysis provides a starting point for understanding how governance mediates the mineral-conflict relationship, but several limitations warrant discussion.
+
+Our identification strategy relies on mineral discovery as the treatment, capturing the moment when a location's resource potential becomes known. This approach offers identification advantages because discovery timing is plausibly exogenous to local conflict dynamics, and it allows us to estimate anticipatory effects before extraction begins. However, discovery and active mining likely operate through different mechanisms. Discovery may trigger conflict through expectations of future wealth, speculative land grabs, and positioning by armed groups seeking to control eventual extraction \citep{cust2015dutch, lei2019natural}. Mining, by contrast, generates actual revenue flows, employment, infrastructure development, and sustained interactions between extractive firms, state authorities, and local communities. The development channel of roads, jobs, and services that accompanies active mining could either amplify pacification, through opportunity costs of violence and improved state capacity, or intensify conflict, through grievances over distribution, environmental damage, and displacement \citep{aragon2015mining, kotsadam2018industrial}. There are no publicly available datasets on critical minerals production.
+
+Alternative mechanisms could generate patterns consistent with our findings, and we cannot fully isolate among them with the current design. The decoupling pattern for chromium could reflect not governance gaps but geological characteristics. Chromium deposits are often associated with large-scale industrial mining operations, concentrating extraction in facilities less susceptible to artisanal mining but potentially more attractive as targets for state securitization. Disentangling governance from geology requires within-mineral variation in institutional frameworks that does not yet exist for chromium. Further, the pacification effects we attribute to Dodd-Frank and related frameworks could instead reflect broader trends in the regions where governed minerals are located. The eastern DRC, for instance, experienced significant international peacekeeping expansion and security sector reform during our study period. While our difference-in-differences design with cell fixed effects absorbs time-invariant regional characteristics, it cannot fully rule out confounding from spatially targeted interventions that coincided with governance implementation.
+
+Several measurement issues merit acknowledgment. Battle death estimates from UCDP carry considerable uncertainty, particularly for events in remote areas with limited reporting infrastructure. Our reliance on the best estimate may obscure important variation, and the wide confidence intervals on lethality effects partly reflect this. We use a variety of spatial scales in the robustness appendix to further parse the spatial precision of these effects. Our mineral discovery data capture documented exploration-to-discovery activity reported to commercial databases, so informal discoveries, particularly of artisanally mined minerals, may go unrecorded. If informal discovery is correlated with conflict, either as cause or as consequence, our estimates could be biased. This concern is less acute for industrial minerals like PGMs and chromium and more relevant for minerals with artisanal potential. A further point concerns the temporal coverage of our data, which ends in 2018. The cutoff truncates follow-up length for the most recently discovered cohorts. Cells whose first discovery falls after 2018 are unobserved as treated and therefore sit in the never-treated comparison pool, which would attenuate our estimates if conflict around those cells already responds to exploration activity before the discovery is recorded.
+
+Finally, the national governance findings rest entirely on a single country. South Africa holds the overwhelming majority of global platinum group metal reserves and output, and the PGM discoveries in our data are concentrated there. The exclusion of formal armed groups that we attribute to state monopoly control therefore reflects the specific institutional setting of South African mining, including the MPRDA and a state with the administrative reach to license and police industrial extraction. Whether national governance produces the same exclusion in settings with weaker state capacity or more contested territorial control is a question our data cannot answer. The PGM results are best read as evidence on how one strong national regulatory regime shapes mineral conflict, not as a general claim about national governance. This geographic concentration also makes the national governance tier less separable from country-level conditions than the other tiers, so its estimates warrant extra caution in any extrapolation beyond South Africa.
+
+% [PL C80] PL asked whether the analysis should include only South African
+% discoveries. Not applied pending her decision. Needs a count of non-SA PGM hexes.
+
+\section{Discussion}
+\label{sec:discussion}
+
+Our findings have several implications for understanding the resource curse and for policy. Our results suggest that mineral wealth does not mechanically produce conflict \citep{ross2015resource, gilmore2005resource}. The same mineral that fueled violence in the DRC in the 1990s now shows pacifying effects following implementation of governance frameworks. This suggests the curse is not inherent to resource wealth but emerges from institutional failures that governance can address \citep{mehlum2006institutions, robinson2006governance}.
+
+At the same time, governance gaps create new risks. The decoupling pattern we document for chromium represents a new and concerning dynamic. The actor-level decomposition identifies the mechanism. State forces become deadlier while formal armed groups are absent from the conflict landscape entirely. This is not the resource curse of the 1990s, where rebel groups competed for mineral rents. It is a pattern in which state securitization of strategically valuable deposits occurs without the transparency and accountability constraints imposed by international governance frameworks. As demand grows for minerals vital to clean energy and industrial infrastructure, the absence of governance frameworks may produce a new generation of ``blood minerals'' \citep{enough2009conflict}, but one driven by state violence rather than rebel predation.
+
+Our results also indicate that different governance models suit different contexts. International frameworks, following the Dodd-Frank model, appear most effective for minerals with dispersed, artisanal extraction that can fund armed groups \citep{radley2021artisanal}. National governance, following the South African model, appears effective when industrial capacity requirements already exclude non-state actors. The mechanism analysis is consistent with this. International governance pacifies actors across the board through supply chain transparency, while national governance operates on formal armed groups through state monopoly control. Policy should match governance approach to extraction characteristics.
+
+Anticipatory effects also matter. Our focus on discovery rather than production suggests that conflict dynamics shift before extraction begins \citep{cotet2013oil, arezki2017natural}. This has implications for early intervention. Governance frameworks should ideally be established before a mineral becomes strategically important, not after conflict patterns emerge.
+
+\section{Concluding Remarks and Future Research}
+\label{sec:conclusion}
+
+The global energy transition will intensify demand for minerals concentrated in conflict-prone regions. This study shows that governance structure, and not mineral type alone, systematically conditions how critical mineral discoveries shape armed conflict in Africa. Our findings suggest this need not reproduce the resource conflicts of the past. Governance frameworks can break the link between mineral wealth and violence, as the pacifying effects of Dodd-Frank on 3T minerals demonstrate.
+
+However, governance gaps pose serious risks. Chromium, currently lacking international frameworks, already shows the concerning pattern of increased state-initiated lethality and civilian casualties following discovery. The actor-level decomposition reveals that governance gaps do not simply leave a vacuum. They produce a distinctive conflict signature in which state forces securitize extraction sites without accountability, and civilians bear the cost. As chromium and similar minerals become more strategically important, extending governance frameworks could prevent escalation.
+
+The policy implications of our study are actionable. Early, context-sensitive governance interventions at the discovery stage can prevent mineral wealth from becoming a source of violent competition. For minerals and regions that currently lack oversight, policymakers and industry should prioritize transparency, independent monitoring, and accountability measures to reduce the risk of securitization and civilian harm. Africa provides a key test case. The success of 3T governance shows that international cooperation can reshape conflict dynamics around extractive resources. The challenge now is extending that success to the critical minerals that will power the clean energy transition.
+
+% [PL C388] Future-research material folded into this section, per PL's proposal.
+Finally, the findings point to a research agenda with direct policy relevance. Future work should test whether the governance-contingent patterns documented here persist once production begins, and better firm-level and production data would sharpen causal inference and help translate supply-chain interventions into protections for communities living near strategic deposits. Spatial spillover analysis examining conflict dynamics in neighboring cells could help distinguish pacification from displacement, if governance frameworks push armed groups away from regulated minerals toward ungoverned alternatives \citep{berman2017spillover}. Other extensions include investigating how heterogeneity in country-level institutions relates to international governance frameworks. Dodd-Frank's effectiveness likely depends on baseline state capacity, rule of law, and integration into global supply chains, and cross-national variation in these factors could help identify scope conditions for governance-based interventions. Extending the analysis to other critical mineral frontiers, particularly Latin America and Southeast Asia, would test external validity. If governance-contingent effects replicate across continents with different colonial histories, state structures, and armed group configurations, confidence in the generalizability of our findings would increase. The emergence of new governance initiatives for battery minerals, cobalt in particular, also creates opportunities for prospective evaluation. Tracking conflict dynamics around cobalt deposits as frameworks like the Responsible Minerals Initiative expand coverage would provide quasi-experimental evidence on governance effects as they unfold.
+
+\bibliography{bib}
+
+\clearpage
+\appendix
+\renewcommand{\thetable}{\thesection\arabic{table}}
+\renewcommand{\thefigure}{\thesection\arabic{figure}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+\section{Robustness Across Spatial Scales}
+\label{sec:scales}
+
+Figure \ref{fig:africa_hex_grids} illustrates the hexagonal grid structure used for spatial aggregation at two resolutions. The 50km grid provides fine-grained local analysis, while the 300km grid captures broader regional patterns. Our main results (100km) fall between these extremes.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots_prerev/Africa50km.png}
+        \caption{50 km hex grid}
+        \label{fig:africa50km}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots_prerev/Africa300km.png}
+        \caption{300 km hex grid}
+        \label{fig:africa300km}
+    \end{subfigure}
+    \caption{Africa hex grids at two resolutions. Left panel shows 50km diameter hexagons; right panel shows 300km diameter hexagons. Main analysis uses 100km resolution.}
+    \label{fig:africa_hex_grids}
+\end{figure}
+
+\section{Production-Onset Robustness Figures}
+\label{ap:prod_figs}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+These figures accompany the production-onset robustness analysis in Section~\ref{sec:production}. Each panel reports Callaway-Sant'Anna event-study estimates for conflict events (left) and battle deaths (right) using production onset as the treatment in place of discovery.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.48\textwidth]{plots_prerev/prod_copper_events_count.pdf}
+\includegraphics[width=0.48\textwidth]{plots_prerev/prod_copper_best_sum.pdf}
+\caption{Copper production onset: conflict events (left) and battle deaths (right).}
+\label{fig:prod_copper}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.48\textwidth]{plots_prerev/prod_cobalt_events_count.pdf}
+\includegraphics[width=0.48\textwidth]{plots_prerev/prod_cobalt_best_sum.pdf}
+\caption{Cobalt production onset: conflict events (left) and battle deaths (right).}
+\label{fig:prod_cobalt}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.48\textwidth]{plots_prerev/prod_pgms_events_count.pdf}
+\includegraphics[width=0.48\textwidth]{plots_prerev/prod_pgms_best_sum.pdf}
+\caption{PGMs production onset: conflict events (left) and battle deaths (right). Pre-trends are violated, so estimates are descriptive only.}
+\label{fig:prod_pgms}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{plots_prerev/prod_calendar_comparison.pdf}
+\caption{Calendar-time effects of production onset, cobalt and PGMs (conflict events).}
+\label{fig:prod_calendar}
+\end{figure}
+
+\section{Full Results}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+
+\subsection{Pooled Effects}
+
+\input{latex_prerev/pooled_effects.tex}
+
+\subsection{Tantalum (3T Governed)}
+
+\input{latex_prerev/tantalum_events_count_event_study.tex}
+
+\input{latex_prerev/tantalum_best_sum_event_study.tex}
+
+\input{latex_prerev/tantalum_best_sum_calendar.tex}
+
+\begin{table}[H]
+\centering
+\caption{Tantalum Effects Across Spatial Scales. Cells report the number of significant post-treatment periods (at $p<0.05$) with direction of effect in parentheses. ``---'' indicates no significant effects.}
+\label{tab:tantalum_robustness}
+\begin{tabular}{lcccccc}
+\toprule
+Scale & All Events & Battle Deaths & State-Based & Non-State & One-Sided & Pre-Trends \\
+\midrule
+300km & 7 (Neg)   & ---           & 4 (Neg)     & ---       & ---       & 0--4       \\
+250km & ---       & ---           & 3 (Neg)     & 20 (Neg)  & ---       & 3--4       \\
+200km & ---       & ---           & ---         & ---       & ---       & ---        \\
+150km & ---       & ---           & 8 (Neg)     & ---       & 9 (Neg)   & 2--5       \\
+100km & ---       & 9 (Neg)       & ---         & ---       & 7 (Neg)   & 2--3       \\
+050km & ---       & ---           & ---         & 5 (Neg)   & ---       & 0          \\
+025km & ---       & ---           & ---         & ---       & ---       & ---        \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Tin (3T Governed)}
+
+Tin provides additional evidence for the effectiveness of 3T governance frameworks. Like tantalum, tin shows strong pacification effects with no increase in battle deaths, supporting H1.
+
+\begin{table}[H]
+\centering
+\caption{Tin Effects Across Spatial Scales. Cells report the number of significant post-treatment periods (at $p<0.05$) with direction of effect in parentheses. ``---'' indicates no significant effects. Tin shows particularly strong effects at coarser scales (200--250km), consistent with regional supply chain mechanisms.}
+\label{tab:tin_robustness}
+\begin{tabular}{lcccccc}
+\toprule
+Scale & All Events & Battle Deaths & State-Based & Non-State & One-Sided & Pre-Trends \\
+\midrule
+300km & ---       & ---           & 7 (Neg)     & 4 (Neg)   & ---       & 3--5       \\
+250km & ---       & ---           & ---         & 20 (Neg)  & ---       & 3          \\
+200km & ---       & ---           & ---         & 20 (Neg)  & ---       & 5          \\
+150km & ---       & ---           & ---         & 5 (Neg)   & ---       & 4          \\
+100km & ---       & ---           & ---         & ---       & ---       & ---        \\
+050km & ---       & ---           & ---         & ---       & ---       & ---        \\
+025km & ---       & ---           & ---         & ---       & ---       & ---        \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Chromium (Governance Gap)}
+
+\input{latex_prerev/chromium_events_count_event_study.tex}
+
+\input{latex_prerev/chromium_best_sum_event_study.tex}
+
+\input{latex_prerev/chromium_best_sum_calendar.tex}
+
+% TODO: Chromium scale sensitivity table (populate from multi-scale analysis)
+
+\subsection{Platinum Group Metals (Nationally Governed)}
+
+\input{latex_prerev/pgms_events_count_event_study.tex}
+
+\input{latex_prerev/pgms_best_sum_event_study.tex}
+
+\input{latex_prerev/pgms_best_sum_calendar.tex}
+
+\begin{table}[H]
+\centering
+\caption{PGMs Effects Across Spatial Scales. Cells report the number of significant post-treatment periods (at $p<0.05$) with direction of effect in parentheses. ``---'' indicates no significant effects.}
+\label{tab:pgms_robustness}
+\begin{tabular}{lcccccc}
+\toprule
+Scale & All Events & Battle Deaths & State-Based & Non-State & One-Sided & Pre-Trends \\
+\midrule
+300km & ---       & ---           & ---         & 8 (Neg)   & ---       & 1          \\
+250km & 3 (Neg)   & ---           & 3 (Neg)     & 9 (Neg)   & ---       & 1--2       \\
+200km & ---       & 7 (Neg)       & 7 (Neg)     & 10 (Neg)  & ---       & 0--4       \\
+150km & ---       & ---           & ---         & 9 (Neg)   & ---       & 4          \\
+100km & ---       & ---           & ---         & 11 (Neg)  & ---       & 5          \\
+050km & ---       & ---           & 3 (Neg)     & 8 (Neg)   & ---       & 4          \\
+025km & ---       & ---           & 3 (Neg)     & 8 (Neg)   & ---       & ---        \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Mechanism Tables}
+
+\input{latex_prerev/mechanism_tantalum.tex}
+
+\input{latex_prerev/mechanism_pgms.tex}
+
+\input{latex_prerev/mechanism_chromium.tex}
+
+\end{document}

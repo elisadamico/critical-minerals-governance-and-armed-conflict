@@ -261,7 +261,7 @@ One caveat attaches to the chromium event-count result. At 100km it carries eigh
 % open option.
 Figure \ref{fig:calendar} presents the same estimates in calendar time rather than event time, which lets us line the results up against the dates the governance frameworks actually took effect. Tantalum shows conflict events declining through the period following Dodd-Frank (2010) and the OECD Guidance (2011). PGMs decline gradually from the mid-2000s, after South Africa's MPRDA. Chromium conflict events drift downward across the second half of the period, with no turning point at any policy date, which is what the absence of a governance framework would predict. Chromium battle deaths show no calendar-time trend at all. That is worth stating plainly, because the increase in chromium battle deaths reported above is an event-time result, measured relative to each cell's own discovery year. Discoveries are spread across two decades, so an effect that appears ten years after discovery in each cell need not line up with any particular calendar year, and the calendar view averages it away.
 
-These plots should be read with one caveat in mind. Our panel opens in 1995, but the international frameworks arrive between 2009 and 2011, so more than half the observation window precedes the intervention whose effect we are attributing. The event-time estimates do not depend on those dates, since they are anchored to each cell's own discovery year, but the calendar-time alignment is suggestive rather than a test of the policies themselves.
+These plots should be read with one caveat in mind. Our panel opens in 1995, but the international frameworks arrive between 2009 and 2011, so more than half the observation window precedes the intervention whose effect we are attributing. The event-time estimates do not depend on those dates, since they are anchored to each cell's own discovery year, but the calendar-time alignment is suggestive rather than a test of the policies themselves. Appendix Table \ref{tab:post2010} reports what happens when the sample is restricted to the years in which the frameworks are actually in force.
 
 \begin{figure}[H]
     \centering
@@ -423,6 +423,20 @@ Figure \ref{fig:africa_hex_grids} illustrates the hexagonal grid structure used 
 \end{figure}
 
 % [PL C295] Production-onset appendix figures removed with the main-text section.
+
+\section{Robustness: The Post-2010 Period}
+\label{sec:post2010}
+
+% [PL C39] Answered. She asked whether to show results for the 2010 onward period
+% as a robustness check, since the governance frameworks arrive near the end of
+% the panel. Run by REM/21_post2010_and_grids.R.
+The international governance frameworks at the centre of this study take effect between 2009 and 2011, near the end of our observation window. A natural question is whether the results hold when the sample is restricted to the period in which those frameworks are actually in force. Table \ref{tab:post2010} reports estimates from 2010 onward alongside the full-panel results. Cells whose discovery precedes 2010 are dropped, since they have no pre-treatment period inside the restricted window.
+
+The restriction turns out to be uninformative rather than contradictory, and for two reasons. The effects we document emerge slowly, with little movement in the first four post-treatment years, so a window that ends in 2018 leaves at most eight years in which to observe an effect that typically appears after five. And the restriction removes most treated cells for two of the three minerals. Chromium retains five treated cells and platinum group metals only two, in neither case enough for estimation. Where the test can be run, it is consistent with the full-panel results. Tantalum conflict events remain negative at $-0.27$ against $-0.20$ on the full panel, and tin remains negative at $-0.39$ against $-0.64$, but the standard errors roughly triple and neither is distinguishable from zero.
+
+We therefore report this as a check that the main results are not an artefact of the pre-framework period, rather than as independent confirmation. A stronger version of the test would require conflict and discovery data extending well beyond 2018.
+
+\input{latex/post2010_robustness.tex}
 
 \section{Full Results}
 \setcounter{table}{0}

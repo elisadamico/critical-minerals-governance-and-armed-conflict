@@ -1,0 +1,23 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Robustness: restricting the sample to 2010 onward}
+\label{tab:post2010}
+\begin{tabular}{llrrrr}
+\toprule
+& & \multicolumn{2}{c}{\textbf{Full panel}} & \multicolumn{2}{c}{\textbf{2010 onward}} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+\textbf{Mineral} & \textbf{Outcome} & \textbf{Cells} & \textbf{ATT} & \textbf{Cells} & \textbf{ATT} \\
+\midrule
+Tantalum & Conflict events & 25 & -0.202$^{*}$ (0.112) & 20 & -0.272 (0.363) \\
+Tantalum & Battle deaths & 25 & 4.084 (3.214) & 20 & -2.590 (3.219) \\
+Tin & Conflict events & 12 & -0.635$^{**}$ (0.308) & 10 & -0.392 (0.685) \\
+Tin & Battle deaths & 12 & 5.922 (6.062) & 10 & -7.300 (7.129) \\
+Chromium & Conflict events & 11 & -0.155$^{**}$ (0.073) & 5 & --- \\
+Chromium & Battle deaths & 11 & 1.645 (1.094) & 5 & --- \\
+PGMs & Conflict events & 8 & -0.232$^{**}$ (0.096) & 2 & --- \\
+PGMs & Battle deaths & 8 & 8.258 (5.734) & 2 & --- \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.92\textwidth}\vspace{4pt}\scriptsize \textit{Notes.} Dynamic Callaway--Sant'Anna aggregates, standard errors in parentheses. The restricted sample keeps only years from 2010 and drops cells whose discovery precedes 2010, since those have no pre-treatment period inside the window. ``---'' indicates the outcome has no variation among treated cells. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.\end{minipage}
+\end{table}
