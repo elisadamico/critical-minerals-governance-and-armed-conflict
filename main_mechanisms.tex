@@ -431,9 +431,9 @@ Figure \ref{fig:africa_hex_grids} illustrates the hexagonal grid structure used 
 \setcounter{figure}{0}
 
 
-\subsection{Pooled Effects}
-
-\input{latex/pooled_effects.tex}
+% [ED C277 / PL C278] Pooled Effects subsection removed. The figure was cut by
+% agreement and the table was generated before the treatment fix, so nothing
+% here was still current. latex/pooled_effects.tex is retained in the repo.
 
 \subsection{Tantalum (3T Governed)}
 
@@ -443,47 +443,13 @@ Figure \ref{fig:africa_hex_grids} illustrates the hexagonal grid structure used 
 
 \input{latex/tantalum_best_sum_calendar.tex}
 
-\begin{table}[H]
-\centering
-\caption{Tantalum Effects Across Spatial Scales. Cells report the number of significant post-treatment periods (at $p<0.05$) with direction of effect in parentheses. ``---'' indicates no significant effects.}
-\label{tab:tantalum_robustness}
-\begin{tabular}{lcccccc}
-\toprule
-Scale & All Events & Battle Deaths & State-Based & Non-State & One-Sided & Pre-Trends \\
-\midrule
-300km & 7 (Neg)   & ---           & 4 (Neg)     & ---       & ---       & 0--4       \\
-250km & ---       & ---           & 3 (Neg)     & 20 (Neg)  & ---       & 3--4       \\
-200km & ---       & ---           & ---         & ---       & ---       & ---        \\
-150km & ---       & ---           & 8 (Neg)     & ---       & 9 (Neg)   & 2--5       \\
-100km & ---       & 9 (Neg)       & ---         & ---       & 7 (Neg)   & 2--3       \\
-050km & ---       & ---           & ---         & 5 (Neg)   & ---       & 0          \\
-025km & ---       & ---           & ---         & ---       & ---       & ---        \\
-\bottomrule
-\end{tabular}
-\end{table}
+\input{latex/tantalum_scales.tex}
 
 \subsection{Tin (3T Governed)}
 
-Tin provides supporting evidence on the 3T tier, though on a much thinner base than tantalum. Effects on conflict events appear only at coarser resolutions and are absent at the 100km scale used in the main analysis, so we report them as suggestive rather than as confirmation of H1.
+Tin is the other 3T mineral with enough treated cells to estimate, twelve at our main resolution against tantalum's twenty-five. At 100km, tin discovery reduces conflict events by $-0.64$ (SE $0.31$), a larger effect than tantalum's and significant at the five percent level, with one significant pre-treatment coefficient. Battle deaths show no effect at any scale. The result does not replicate cleanly across resolutions, being indistinguishable from zero at 25km and 50km and changing sign at the coarsest scales, which is the same scale dependence tantalum displays. We therefore read tin as consistent with H1 rather than as independent confirmation of it.
 
-\begin{table}[H]
-\centering
-\caption{Tin Effects Across Spatial Scales. Cells report the number of significant post-treatment periods (at $p<0.05$) with direction of effect in parentheses. ``---'' indicates no significant effects. Tin shows particularly strong effects at coarser scales (200--250km), consistent with regional supply chain mechanisms.}
-\label{tab:tin_robustness}
-\begin{tabular}{lcccccc}
-\toprule
-Scale & All Events & Battle Deaths & State-Based & Non-State & One-Sided & Pre-Trends \\
-\midrule
-300km & ---       & ---           & 7 (Neg)     & 4 (Neg)   & ---       & 3--5       \\
-250km & ---       & ---           & ---         & 20 (Neg)  & ---       & 3          \\
-200km & ---       & ---           & ---         & 20 (Neg)  & ---       & 5          \\
-150km & ---       & ---           & ---         & 5 (Neg)   & ---       & 4          \\
-100km & ---       & ---           & ---         & ---       & ---       & ---        \\
-050km & ---       & ---           & ---         & ---       & ---       & ---        \\
-025km & ---       & ---           & ---         & ---       & ---       & ---        \\
-\bottomrule
-\end{tabular}
-\end{table}
+\input{latex/tin_scales.tex}
 
 \subsection{Chromium (Governance Gap)}
 
@@ -493,7 +459,7 @@ Scale & All Events & Battle Deaths & State-Based & Non-State & One-Sided & Pre-T
 
 \input{latex/chromium_best_sum_calendar.tex}
 
-% TODO: Chromium scale sensitivity table (populate from multi-scale analysis)
+\input{latex/chromium_scales.tex}
 
 \subsection{Platinum Group Metals (Nationally Governed)}
 
@@ -503,24 +469,7 @@ Scale & All Events & Battle Deaths & State-Based & Non-State & One-Sided & Pre-T
 
 \input{latex/pgms_best_sum_calendar.tex}
 
-\begin{table}[H]
-\centering
-\caption{PGMs Effects Across Spatial Scales. Cells report the number of significant post-treatment periods (at $p<0.05$) with direction of effect in parentheses. ``---'' indicates no significant effects.}
-\label{tab:pgms_robustness}
-\begin{tabular}{lcccccc}
-\toprule
-Scale & All Events & Battle Deaths & State-Based & Non-State & One-Sided & Pre-Trends \\
-\midrule
-300km & ---       & ---           & ---         & 8 (Neg)   & ---       & 1          \\
-250km & 3 (Neg)   & ---           & 3 (Neg)     & 9 (Neg)   & ---       & 1--2       \\
-200km & ---       & 7 (Neg)       & 7 (Neg)     & 10 (Neg)  & ---       & 0--4       \\
-150km & ---       & ---           & ---         & 9 (Neg)   & ---       & 4          \\
-100km & ---       & ---           & ---         & 11 (Neg)  & ---       & 5          \\
-050km & ---       & ---           & 3 (Neg)     & 8 (Neg)   & ---       & 4          \\
-025km & ---       & ---           & 3 (Neg)     & 8 (Neg)   & ---       & ---        \\
-\bottomrule
-\end{tabular}
-\end{table}
+\input{latex/pgms_scales.tex}
 
 \subsection{Mechanism Tables}
 
