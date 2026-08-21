@@ -263,21 +263,14 @@ One caveat attaches to the chromium event-count result. At 100km it carries eigh
 % [ED C277 / PL C278] Pooled-effects figure removed by agreement of both authors.
 % The underlying table (latex/pooled_effects.tex) remains in Appendix C.
 
-% [PL C279] Figure rebuilt in the light theme on the corrected panel, with a
-% caption that explains how to read it. Her second point, that the interventions
-% land in 2009-2011 while the panel opens in 1995, is addressed in the text below
-% rather than by the figure. The post-2010 subsample she raised in C39 remains an
-% open option.
-Figure \ref{fig:calendar} presents the same estimates in calendar time rather than event time, which lets us line the results up against the dates the governance frameworks actually took effect. Tantalum shows conflict events declining through the period following Dodd-Frank (2010) and the OECD Guidance (2011). PGMs decline gradually from the mid-2000s, after South Africa's MPRDA. Chromium conflict events drift downward across the second half of the period, with no turning point at any policy date, which is what the absence of a governance framework would predict. Chromium battle deaths show no calendar-time trend at all. That is worth stating plainly, because the increase in chromium battle deaths reported above is an event-time result, measured relative to each cell's own discovery year. Discoveries are spread across two decades, so an effect that appears ten years after discovery in each cell need not line up with any particular calendar year, and the calendar view averages it away.
-
-These plots should be read with one caveat in mind. Our panel opens in 1995, but the international frameworks arrive between 2009 and 2011, so more than half the observation window precedes the intervention whose effect we are attributing. The event-time estimates do not depend on those dates, since they are anchored to each cell's own discovery year, but the calendar-time alignment is suggestive rather than a test of the policies themselves. Appendix Table \ref{tab:post2010} reports what happens when the sample is restricted to the years in which the frameworks are actually in force.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{plots/all_minerals_calendar_comparison.png}
-    \caption{Calendar-time estimates aligned to policy milestones. Each panel plots the average treatment effect on the treated in each calendar year rather than in event time, so the horizontal axis is the year itself and effects occurring at different points after discovery are pooled within each year. Dotted vertical lines mark the governance interventions, namely South Africa's MPRDA (2004), iTSCi (2009), Dodd-Frank Section 1502 (2010), the OECD Guidance (2011), and the first Dodd-Frank company reports (2014). Shaded bands are 95\% confidence intervals. Panels one and two show conflict events for tantalum and platinum group metals. Panels three and four show conflict events and battle deaths for chromium. Because discoveries are spread across the panel, this view is not well suited to detecting slow-emerging effects, and it should be read alongside the event-time estimates in Figure \ref{fig:main_results} rather than in place of them.}
-    \label{fig:calendar}
-\end{figure}
+% [PL C279] Calendar-time figure and analysis cut. She could not read it, and on
+% inspection it cannot show what it was there to show: the calendar aggregation
+% pools effects occurring at different event times within each year, and since
+% discoveries span two decades while effects emerge after five to ten years, an
+% effect at year ten lands in a different calendar year for every cell and
+% averages away. That is why chromium battle deaths appeared flat there despite a
+% significant event-time effect. Her underlying concern about the timing of the
+% frameworks is answered directly in Appendix \ref{sec:post2010} instead.
 
 \subsection{Mechanisms: Actor-Level Decomposition}
 \label{sec:mechanisms}
@@ -286,18 +279,20 @@ These plots should be read with one caveat in mind. Our panel opens in 1995, but
 % with the initiator/target distinction defined in Section 3.1.
 The aggregate results establish that governance structure shapes the mineral-conflict relationship, but they treat all violence as equivalent. They cannot say which kinds of actors are doing the killing, or which are being killed. We address this by decomposing conflict outcomes by actor type and role using the UCDP Actor Dataset (v25.1), following the initiator and target definitions set out in Section \ref{sec:data}. For each mineral we estimate separate event-study models for formal armed group activity, both as initiators and as targets, for state-initiated violence, and for the targeting of civilians.
 
+Figure \ref{fig:mech_main} shows the six actor outcomes that move. Table \ref{tab:mech_combined} reports every outcome we estimate, including those that do not move, and Appendix \ref{sec:mechfigs} gives the full event-study grids for each mineral. We discuss the moving outcomes here and note the null results where they matter for interpretation.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{plots/mechanism_maintext.png}
+    \caption{Actor-level effects of mineral discovery, 100km resolution. Panels show the six outcomes for which estimates move; the remaining outcomes are reported in Table \ref{tab:mech_combined} and Appendix \ref{sec:mechfigs}. Colour marks post-treatment periods and the lighter shade pre-treatment periods, with 95\% confidence intervals. Tantalum in brown, PGMs in teal, chromium in green.}
+    \label{fig:mech_main}
+\end{figure}
+
 The set of actor outcomes varies by mineral depending on data availability. Tantalum and PGMs support estimation across all actor types. Chromium does not. No treated chromium cell records any formal armed group activity at any point in the panel, at any of our seven spatial resolutions, so no formal group outcome can be estimated for that mineral. As we argue below, that absence is itself the finding.
 
 \subsubsection{Tantalum: Armed Group Exclusion Without Civilian Protection}
 
-Figure \ref{fig:mech_tantalum} presents the actor-level decomposition for tantalum. The aggregate decline in conflict events is driven almost entirely by formal armed groups leaving the conflict landscape, and it is not accompanied by any improvement for civilians.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{plots/mechanism_tantalum_actors.png}
-    \caption{Actor-level mechanism for tantalum (internationally governed, 100km). Formal armed group activity declines both as initiator and as target. Fatal violence against civilians moves in the opposite direction. State-initiated fatalities show no significant change.}
-    \label{fig:mech_tantalum}
-\end{figure}
+The aggregate decline in conflict events is driven almost entirely by formal armed groups leaving the conflict landscape, and it is not accompanied by any improvement for civilians.
 
 Formal armed groups initiate fewer conflict events after tantalum discovery, with an average post-treatment effect of $-0.09$ (SE $0.03$), significant at the one percent level and stable across every post-treatment window we examine. They are also attacked less often, with events in which a formal group is the target falling by $-0.19$ (SE $0.07$). Both results hold at 50km as well as 100km, the resolutions at which local effects should be visible, and pre-treatment coefficients are near zero. This is the pattern international governance is designed to produce. Supply chain transparency and traceability requirements cut off the revenue that sustains organized armed groups, and those groups withdraw from areas where the trade has been formalized.
 
@@ -307,25 +302,11 @@ Civilians do not benefit. Fatal violence against civilians rises rather than fal
 
 For PGMs under national governance, the aggregate results show strong reductions in overall conflict events (Figure~\ref{fig:main_results}). The actor-level decomposition reveals the mechanism. Formal armed groups are systematically excluded from the conflict landscape around PGM deposits.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{plots/mechanism_pgms_actors.png}
-    \caption{Actor-level mechanism for PGMs (nationally governed, 100km). Full decomposition across formal armed groups (as initiators and as targets), state actors, and civilians. Formal groups decline as targets of violence. State-initiated and civilian-targeted outcomes show no significant movement.}
-    \label{fig:mech_pgms}
-\end{figure}
-
 Events in which a formal armed group is the target decline, by $-0.11$ (SE $0.06$) across post-treatment periods and $-0.19$ (SE $0.06$) from the tenth year. Formal group fatalities as initiators point the same way but are estimated imprecisely and do not reach significance. State-initiated and civilian-targeted outcomes show no significant movement in either direction. National governance therefore operates on organized armed challengers to extraction rather than suppressing violence uniformly, which is consistent with H2. The state's monopoly over PGM extraction makes it costly for formal armed groups to contest access, while state and civilian outcomes remain largely unaffected. These estimates rest on only eight treated cells, so they are best read as consistent with the aggregate result rather than as independent confirmation of it. See Table~\ref{tab:mech_pgms} for full estimates.
 
 \subsubsection{Chromium: State Lethality and the Decoupling Mechanism}
 
-Figure \ref{fig:mech_chromium} shows the actor-level mechanism underlying chromium's decoupling pattern.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{plots/mechanism_chromium_actors.png}
-    \caption{Actor-level mechanism for chromium (governance gap, 100km). State-initiated fatalities and fatal violence against civilians both increase, with the effects concentrated in later post-treatment years. Formal armed groups are entirely absent from treated cells and cannot be estimated.}
-    \label{fig:mech_chromium}
-\end{figure}
+The actor-level decomposition shows the mechanism underlying chromium's decoupling pattern.
 
 State-initiated fatalities increase following chromium discovery, by $2.68$ (SE $1.23$) from the tenth post-treatment year, with no significant pre-treatment coefficients. Fatal violence against civilians increases as well, by $0.85$ (SE $0.43$) across post-treatment periods and $1.13$ (SE $0.54$) in the later window. Both effects hold in direction across every spatial scale at which they can be estimated. Formal armed groups, meanwhile, are entirely absent. No treated chromium cell records a single formal group event anywhere in the panel, at any resolution, so there is no variation to estimate. That absence is itself informative, and it is the one claim in this section that requires no estimation at all. Chromium extraction is industrial rather than artisanal, so it offers armed groups none of the dispersed revenue opportunities available around 3T deposits, and there is no certification regime whose capture would be worth contesting.
 
@@ -449,6 +430,32 @@ We therefore report this as a check that the main results are not an artefact of
 
 \input{latex/post2010_robustness.tex}
 
+\section{Full Actor-Level Event Studies}
+\label{sec:mechfigs}
+
+These figures give the complete actor-level decomposition for each mineral, including the outcomes that show no movement and are therefore not plotted in the main text. Chromium supports only four outcomes, since no treated chromium cell records formal armed group activity at any resolution.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{plots/mechanism_tantalum_actors.png}
+    \caption{Actor-level mechanism for tantalum (internationally governed, 100km). Formal armed group activity declines both as initiator and as target. Fatal violence against civilians moves in the opposite direction. State-initiated fatalities show no significant change.}
+    \label{fig:mech_tantalum}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{plots/mechanism_pgms_actors.png}
+    \caption{Actor-level mechanism for PGMs (nationally governed, 100km). Full decomposition across formal armed groups (as initiators and as targets), state actors, and civilians. Formal groups decline as targets of violence. State-initiated and civilian-targeted outcomes show no significant movement.}
+    \label{fig:mech_pgms}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{plots/mechanism_chromium_actors.png}
+    \caption{Actor-level mechanism for chromium (governance gap, 100km). State-initiated fatalities and fatal violence against civilians both increase, with the effects concentrated in later post-treatment years. Formal armed groups are entirely absent from treated cells and cannot be estimated.}
+    \label{fig:mech_chromium}
+\end{figure}
+
 \section{Full Results}
 \setcounter{table}{0}
 \setcounter{figure}{0}
@@ -464,8 +471,6 @@ We therefore report this as a check that the main results are not an artefact of
 
 \input{latex/tantalum_best_sum_event_study.tex}
 
-\input{latex/tantalum_best_sum_calendar.tex}
-
 \input{latex/tantalum_scales.tex}
 
 \subsection{Tin (3T Governed)}
@@ -480,8 +485,6 @@ Tin is the other 3T mineral with enough treated cells to estimate, twelve at our
 
 \input{latex/chromium_best_sum_event_study.tex}
 
-\input{latex/chromium_best_sum_calendar.tex}
-
 \input{latex/chromium_scales.tex}
 
 \subsection{Platinum Group Metals (Nationally Governed)}
@@ -489,8 +492,6 @@ Tin is the other 3T mineral with enough treated cells to estimate, twelve at our
 \input{latex/pgms_events_count_event_study.tex}
 
 \input{latex/pgms_best_sum_event_study.tex}
-
-\input{latex/pgms_best_sum_calendar.tex}
 
 \input{latex/pgms_scales.tex}
 
