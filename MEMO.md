@@ -52,10 +52,17 @@ all and is the single most robust fact in the paper.
 
 ## What changed
 
-**H2 in the old numbering is gone.** Tantalum battle deaths do not fall at any
-scale and rise significantly at 150 km. A prediction of reduced lethality under
-international governance is contradicted, not merely unconfirmed, so the tier now
-carries an events-only prediction. Former H3 to H5 are renumbered H2 to H4.
+**H2 is contradicted, and we report it that way.** Tantalum battle deaths do not
+fall at any scale and rise significantly at 150 km. Rather than drop the
+hypothesis, we keep it and say it fails, because the way it fails is the
+interesting part. Its first step holds: formal armed groups withdraw once the
+trade is formalized, exactly as a financing mechanism predicts. Its second step
+does not: armed group withdrawal is not followed by civilian protection. A new
+paragraph in the discussion reconciles this against Stoop et al. (2018), who
+found Dodd-Frank increased violence against civilians in eastern DRC, and
+against Sanchez de la Sierra (2020) on armed groups as stationary bandits whose
+removal need not leave civilians safer. Hypothesis numbering is unchanged at
+H1-H5.
 
 **The tantalum mechanism reverses.** The old draft reported universal
 pacification, with state and civilian violence declining. On corrected data
