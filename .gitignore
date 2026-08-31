@@ -8,3 +8,9 @@
 *.fls
 main_mechanisms.pdf
 main_prerevision.pdf
+deck/*.aux
+deck/*.log
+deck/*.nav
+deck/*.out
+deck/*.snm
+deck/*.toc

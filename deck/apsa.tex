@@ -1,0 +1,283 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usetheme{metropolis}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{appendixnumberbeamer}
+
+% ── Colour palette ──────────────────────────
+\definecolor{bg}{HTML}{33271E}
+\definecolor{muted}{HTML}{8A7B94}
+\definecolor{sage}{HTML}{8FBCB3}
+\definecolor{lime}{HTML}{C8E88F}
+\definecolor{cream}{HTML}{F6F4E8}
+
+% ── Apply palette to beamer elements ────────
+\setbeamercolor{normal text}{fg=cream, bg=bg}
+\setbeamercolor{alerted text}{fg=lime}
+\setbeamercolor{example text}{fg=sage}
+
+\setbeamercolor{frametitle}{fg=cream, bg=bg}
+\setbeamercolor{title}{fg=cream, bg=bg}
+\setbeamercolor{subtitle}{fg=sage}
+\setbeamercolor{author}{fg=cream}
+\setbeamercolor{institute}{fg=muted}
+\setbeamercolor{date}{fg=muted}
+
+\setbeamercolor{progress bar}{fg=sage, bg=bg!80!black}
+\setbeamercolor{title separator}{fg=sage}
+
+\setbeamercolor{block title}{fg=bg, bg=sage}
+\setbeamercolor{block body}{fg=cream, bg=bg!85!black}
+
+\setbeamercolor{block title alerted}{fg=bg, bg=lime}
+\setbeamercolor{block body alerted}{fg=cream, bg=bg!85!black}
+
+\setbeamercolor{item}{fg=sage}
+\setbeamercolor{subitem}{fg=muted}
+
+\setbeamercolor{footnote}{fg=muted}
+\setbeamercolor{footnote mark}{fg=muted}
+
+\setbeamercolor{standout}{fg=bg, bg=sage}
+
+% ── Fonts ───────────────────────────────────
+\setbeamerfont{frametitle}{series=\bfseries}
+
+% ── Custom command for question emphasis ────
+\newcommand{\audience}[1]{%
+  \vspace{0.5em}%
+  {\color{lime}\textbf{Question:}} {\color{cream}#1}%
+}
+
+
+\title{Critical Minerals, Governance and Armed Conflict}
+\subtitle{Evidence from Africa}
+\author{Elisa D'Amico \and P\"aivi Lujala}
+\institute{University College Dublin \and University of Oulu}
+\date{APSA Annual Meeting, 2026}
+
+\begin{document}
+
+\maketitle
+
+% ═══════════════════════════════ QUESTION ═══════════════════════════════
+\begin{frame}{The Question}
+  \vspace{1em}
+  \begin{center}
+    {\Large\color{cream}
+      When a critical mineral is found, does the violence around it\\[0.35em]
+      depend on \textcolor{lime}{how that mineral is governed}?}
+  \end{center}
+  \vspace{1.2em}
+  \begin{itemize}
+    \item Same continent, same period, same estimator
+    \item What varies is the \textbf{institutional regime} attached to the mineral
+    \item Three regimes, three minerals, one design
+  \end{itemize}
+\end{frame}
+
+% ═══════════════════════════════ MOTIVATION ═════════════════════════════
+\begin{frame}{Why It Matters Now}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \item The energy transition is driving demand for minerals concentrated in
+              conflict-prone regions
+        \item Africa holds much of the supply
+        \item Governance is \textbf{wildly uneven}: some minerals sit under
+              international due diligence regimes, some under strong national law,
+              some under nothing at all
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{block}{The policy bet}
+        Dodd--Frank 1502, ITSCI and the OECD Guidance assume that cutting armed
+        groups off from mineral revenue makes these places safer.
+      \end{block}
+      \vspace{0.5em}
+      {\color{lime}We test that assumption.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ═══════════════════════════════ THEORY ═════════════════════════════════
+\begin{frame}{Three Governance Regimes}
+  \begin{columns}[T]
+    \begin{column}{0.33\textwidth}
+      \begin{block}{International}
+        \textbf{Tantalum}\\[0.3em]
+        {\small Dodd--Frank 1502, ITSCI, OECD. Transparency and traceability
+        cut off armed group financing.}
+      \end{block}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \begin{block}{National}
+        \textbf{PGMs}\\[0.3em]
+        {\small South Africa's MPRDA. State custodianship and licensing;
+        industrial extraction excludes informal actors.}
+      \end{block}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \begin{block}{Governance gap}
+        \textbf{Chromium}\\[0.3em]
+        {\small No equivalent regime. High strategic value, no transparency
+        requirement, no certification.}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{1em}
+  \begin{center}
+    {\color{sage}The effect of discovery should depend on which regime applies.}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Hypotheses}
+  \vspace{0.5em}
+  \begin{itemize}
+    \item[\textcolor{sage}{\textbf{H1}}] International governance
+          \textbf{reduces conflict events}
+    \item[\textcolor{sage}{\textbf{H2}}] International governance
+          \textbf{reduces battle deaths}
+    \item[] \hspace{1em}{\small\color{muted}the frameworks were justified publicly
+            as civilian protection}
+    \item[\textcolor{sage}{\textbf{H3}}] National governance
+          \textbf{reduces conflict events}
+    \item[\textcolor{lime}{\textbf{H4}}] Governance gap
+          \textbf{reduces conflict events}
+    \item[\textcolor{lime}{\textbf{H5}}] Governance gap
+          \textbf{increases battle deaths}
+    \item[] \hspace{1em}{\small\color{muted}high value, no oversight, state forces
+            move in: fewer clashes but deadlier ones}
+  \end{itemize}
+\end{frame}
+
+% ═══════════════════════════════ DATA ═══════════════════════════════════
+\begin{frame}{Data}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \textbf{Discoveries} \\[0.3em]
+      {\small S\&P Global Market Intelligence. 1{,}093 African exploration sites,
+      42 countries, 1995--2018. Treatment is the first year a cell records
+      exploration activity for the mineral.}
+      \vspace{0.9em}
+
+      \textbf{Conflict} \\[0.3em]
+      {\small UCDP-GED v25.1. Events and battle deaths, plus the Actor Dataset
+      for who initiates and who is targeted.}
+      \vspace{0.9em}
+
+      \textbf{Unit} \\[0.3em]
+      {\small Hexagonal grid cells, 25--300\,km. Main analysis at 100\,km:
+      3{,}658 cells, 87{,}792 cell-years.}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \includegraphics[width=\textwidth]{plots/deck/map_dark.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ═══════════════════════════════ METHODS ════════════════════════════════
+\begin{frame}{Design}
+  \begin{itemize}
+    \item Staggered difference-in-differences, \textbf{Callaway--Sant'Anna}
+    \item Cells treated at different times; never-treated cells as controls
+    \item Treatment is absorbing, so we can follow each cell before and after
+          its own discovery year
+  \end{itemize}
+  \vspace{0.8em}
+  \begin{block}{Two features that shape how we read it}
+    \begin{itemize}
+      \item Effects \textbf{emerge slowly}. Little happens before year five.
+            We report the average across all post-treatment years and the
+            average from year ten.
+      \item The later window is identified from the \textbf{earliest cohorts},
+            so it rests on fewer cells.
+    \end{itemize}
+  \end{block}
+  \vspace{0.4em}
+  {\small\color{muted}Treated cells at 100\,km: tantalum 25, chromium 11, PGMs 8.}
+\end{frame}
+
+% ═══════════════════════════════ RESULTS ════════════════════════════════
+\begin{frame}{Aggregate Effects by Regime}
+  \begin{center}
+    \includegraphics[width=0.97\textwidth]{plots/deck/results_dark.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{What the Aggregates Say}
+  \begin{itemize}
+    \item \textcolor{sage}{\textbf{Tantalum}} conflict events fall
+          ($-0.20$, SE $0.11$; $-0.25$ from year ten). \textbf{H1 supported.}
+    \item \textcolor{sage}{\textbf{PGMs}} conflict events fall
+          ($-0.23$, SE $0.09$; $-0.50$ from year ten). \textbf{H3 supported.}
+    \item \textcolor{lime}{\textbf{Chromium}} events fall \emph{and} deaths rise
+          ($-0.16$ and $+2.69$ from year ten), at every spatial scale.
+          \textbf{H4 and H5 supported.}
+  \end{itemize}
+  \vspace{0.8em}
+  \begin{alertblock}{But}
+    Tantalum battle deaths do not fall. They are positive at every scale and
+    significantly positive at 150\,km. \textbf{H2 is contradicted.}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Who Is Actually Affected?}
+  \begin{center}
+    \includegraphics[width=0.97\textwidth]{plots/deck/mech1_dark.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{The Governance Gap at Actor Level}
+  \begin{center}
+    \includegraphics[width=0.86\textwidth]{plots/deck/mech2_dark.png}
+  \end{center}
+  \vspace{0.3em}
+  {\small No treated chromium cell records \emph{any} formal armed group activity,
+  at any spatial scale. The armed groups are simply not there. What rises is
+  \textcolor{lime}{state killing} and \textcolor{lime}{civilian deaths}.}
+\end{frame}
+
+\begin{frame}{Where H2 Breaks}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Step one holds}
+        Formal armed groups withdraw from tantalum areas, as initiators
+        ($-0.09$, SE $0.03$) and as targets ($-0.19$, SE $0.07$).
+        \\[0.4em]
+        The financing mechanism works.
+      \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{alertblock}{Step two does not}
+        Civilian deaths \textbf{rise} ($+1.57$, SE $0.81$).
+        \\[0.4em]
+        Removing armed groups is not the same as protecting civilians.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+  \vspace{1em}
+  {\small Consistent with \textcolor{sage}{Stoop et al.\ (2018)} on Dodd--Frank in
+  the DRC, and with \textcolor{sage}{S\'anchez de la Sierra (2020)} on armed
+  groups as stationary bandits whose exit need not leave civilians safer.}
+\end{frame}
+
+% ═══════════════════════════════ CLOSE ══════════════════════════════════
+\begin{frame}[standout]
+  \begin{center}
+    {\Large Governance changes \emph{who} fights,\\[0.4em]
+     not always \emph{how many} die.}
+    \vspace{1.4em}
+
+    {\normalsize
+     Supply chain regulation does what it was built to do.\\
+     It removes armed groups. Civilians do not benefit.\\[0.8em]
+     Where there is no regime at all, the state fills the space\\
+     and the killing gets worse.}
+  \end{center}
+\end{frame}
+
+\end{document}
