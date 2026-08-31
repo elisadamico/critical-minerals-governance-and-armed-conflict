@@ -439,6 +439,40 @@ We therefore report this as a check that the main results are not an artefact of
 
 \input{latex/post2010_robustness.tex}
 
+A sharper version of the same test restricts each mineral to the period in which
+its own regime existed, rather than applying a common cutoff. The international
+frameworks arrive between 2010 and 2011, while South Africa's MPRDA was enacted
+in 2002 and came into force in May 2004, so a single date treats the two tiers
+unequally. Restricting tantalum to 2010 onward and platinum group metals to 2002
+onward, and in each case dropping cells discovered before the cutoff, gives the
+estimates in Figure \ref{fig:regime_onset}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{plots/regime_onset_robustness.png}
+    \caption{Event studies restricted to the period in which each governance regime existed. Tantalum from 2010, when Dodd-Frank Section 1502 and the ITSCI pilot began, and platinum group metals from 2002, when the MPRDA was enacted. Cells discovered before the relevant cutoff are dropped, since they have no pre-treatment period inside the restricted window. Chromium has no regime date and is not shown.}
+    \label{fig:regime_onset}
+\end{figure}
+
+The two minerals behave differently under this restriction. Tantalum loses its
+result. The conflict-events estimate moves from $-0.20$ (SE $0.11$) to $-0.27$
+(SE $0.36$), so the point estimate is similar while the standard error triples,
+which is what a window of eight post-treatment years on twenty cells would
+produce. We read this as uninformative rather than as evidence against H1a.
+Platinum group metals move the other way. Conflict events strengthen to $-0.30$
+(SE $0.06$) and battle deaths, positive and insignificant on the full panel,
+become $-2.42$ (SE $0.44$).
+
+That second result deserves caution rather than emphasis. It rests on five
+treated cells, and standard errors that tight on five clusters are implausible,
+since the multiplier bootstrap underlying them is not reliable at that number.
+The pre-treatment coefficients in both platinum panels also drift rather than
+sitting flat. We report the restriction because the timing objection is a fair
+one, and because three of the eight platinum cells are discovered before the
+MPRDA exists and so are labelled as nationally governed at a moment when they
+were not. But we do not treat the restricted platinum estimates as a firmer
+version of the main result.
+
 \section{Full Actor-Level Event Studies}
 \label{sec:mechfigs}
 
