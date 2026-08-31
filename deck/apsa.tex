@@ -13,6 +13,7 @@
 \definecolor{sage}{HTML}{8FBCB3}
 \definecolor{lime}{HTML}{C8E88F}
 \definecolor{cream}{HTML}{F6F4E8}
+\definecolor{sand}{HTML}{C4956A}  % tantalum, matches the figures
 
 % ── Apply palette to beamer elements ────────
 \setbeamercolor{normal text}{fg=cream, bg=bg}
@@ -111,21 +112,21 @@
   \begin{columns}[T]
     \begin{column}{0.33\textwidth}
       \begin{block}{International}
-        \textbf{Tantalum}\\[0.3em]
+        \textcolor{sand}{\textbf{Tantalum}}\\[0.3em]
         {\small Dodd--Frank 1502, ITSCI, OECD. Transparency and traceability
         cut off armed group financing.}
       \end{block}
     \end{column}
     \begin{column}{0.33\textwidth}
       \begin{block}{National}
-        \textbf{PGMs}\\[0.3em]
+        \textcolor{sage}{\textbf{PGMs}}\\[0.3em]
         {\small South Africa's MPRDA. State custodianship and licensing;
         industrial extraction excludes informal actors.}
       \end{block}
     \end{column}
     \begin{column}{0.33\textwidth}
       \begin{block}{Governance gap}
-        \textbf{Chromium}\\[0.3em]
+        \textcolor{lime}{\textbf{Chromium}}\\[0.3em]
         {\small No equivalent regime. High strategic value, no transparency
         requirement, no certification.}
       \end{block}
@@ -207,20 +208,46 @@
 \end{frame}
 
 \begin{frame}{What the Aggregates Say}
-  \begin{itemize}
-    \item \textcolor{sage}{\textbf{Tantalum}} conflict events fall
-          ($-0.20$, SE $0.11$; $-0.25$ from year ten). \textbf{H1 supported.}
-    \item \textcolor{sage}{\textbf{PGMs}} conflict events fall
-          ($-0.23$, SE $0.09$; $-0.50$ from year ten). \textbf{H3 supported.}
-    \item \textcolor{lime}{\textbf{Chromium}} events fall \emph{and} deaths rise
-          ($-0.16$ and $+2.69$ from year ten), at every spatial scale.
-          \textbf{H4 and H5 supported.}
-  \end{itemize}
-  \vspace{0.8em}
-  \begin{alertblock}{But}
-    Tantalum battle deaths do not fall. They are positive at every scale and
-    significantly positive at 150\,km. \textbf{H2 is contradicted.}
-  \end{alertblock}
+  \vspace{0.3em}
+  \begin{center}
+  {\small
+  \begin{tabular}{llcccc}
+    \toprule
+    & & \multicolumn{2}{c}{\textbf{Conflict events}}
+      & \multicolumn{2}{c}{\textbf{Battle deaths}} \\
+    \cmidrule(lr){3-4}\cmidrule(lr){5-6}
+    \textbf{Mineral} & \textbf{Regime}
+      & all post & from yr 10 & all post & from yr 10 \\
+    \midrule
+    \textcolor{sand}{Tantalum} & International
+      & $\downarrow$ $-0.20^{*}$   & $\downarrow$ $-0.25^{**}$
+      & $\uparrow$ $4.08$          & $\uparrow$ $6.37$ \\[0.25em]
+    \textcolor{sage}{PGMs} & National
+      & $\downarrow$ $-0.23^{**}$  & $\downarrow$ $-0.50^{***}$
+      & $\uparrow$ $8.26$          & $\uparrow$ $9.31$ \\[0.25em]
+    \textcolor{lime}{Chromium} & Gap
+      & $\downarrow$ $-0.16^{**}$  & $\downarrow$ $-0.26^{***}$
+      & $\uparrow$ $1.65$          & $\uparrow$ $2.69^{**}$ \\
+    \bottomrule
+  \end{tabular}}
+  \end{center}
+  \vspace{0.2em}
+  {\scriptsize\color{muted}Dynamic Callaway--Sant'Anna aggregates, 100\,km.
+  $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.}
+  \vspace{0.6em}
+
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      {\small\color{sage}\textbf{H1, H3, H4, H5 supported.}\\
+      Events fall under all three regimes. Chromium deaths rise, and both hold
+      at every spatial scale.}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      {\small\color{lime}\textbf{H2 contradicted.}\\
+      Tantalum battle deaths do not fall. They are positive at every scale and
+      significantly positive at 150\,km.}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Defunding Works. Protection Does Not.}
