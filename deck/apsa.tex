@@ -65,18 +65,21 @@
 
 % ═══════════════════════════════ QUESTION ═══════════════════════════════
 \begin{frame}{The Question}
-  \vspace{1em}
-  \begin{center}
-    {\Large\color{cream}
-      When a critical mineral is found, does the violence around it\\[0.35em]
-      depend on \textcolor{lime}{how that mineral is governed}?}
-  \end{center}
-  \vspace{1.2em}
-  \begin{itemize}
-    \item Same continent, same period, same estimator
-    \item What varies is the \textbf{institutional regime} attached to the mineral
-    \item Three regimes, three minerals, one design
-  \end{itemize}
+  \begin{columns}[c]
+    \begin{column}{0.52\textwidth}
+      {\Large\color{cream}
+        When a critical mineral is found,\\[0.35em]
+        does the violence around it depend on\\[0.35em]
+        \textcolor{lime}{how that mineral is governed}?}
+      \vspace{1.2em}
+
+      {\color{muted}What varies is the \textbf{institutional regime}
+      attached to the mineral.}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \includegraphics[width=\textwidth]{plots/deck/map_dark.png}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % ═══════════════════════════════ MOTIVATION ═════════════════════════════
@@ -93,7 +96,7 @@
       \end{itemize}
     \end{column}
     \begin{column}{0.45\textwidth}
-      \begin{block}{The policy bet}
+      \begin{block}{The policy payoff}
         Dodd--Frank 1502, ITSCI and the OECD Guidance assume that cutting armed
         groups off from mineral revenue makes these places safer.
       \end{block}
@@ -157,24 +160,31 @@
 % ═══════════════════════════════ DATA ═══════════════════════════════════
 \begin{frame}{Data}
   \begin{columns}[T]
-    \begin{column}{0.52\textwidth}
+    \begin{column}{0.5\textwidth}
       \textbf{Discoveries} \\[0.3em]
-      {\small S\&P Global Market Intelligence. 1{,}093 African exploration sites,
-      42 countries, 1995--2018. Treatment is the first year a cell records
-      exploration activity for the mineral.}
-      \vspace{0.9em}
+      {\small S\&P Global Market Intelligence. 1{,}093 African exploration sites
+      across 42 countries, 1995--2018.}
+      \vspace{0.5em}
+
+      {\small Treatment is the \textbf{first year a cell records exploration
+      activity} for the mineral.}
+      \vspace{1.1em}
 
       \textbf{Conflict} \\[0.3em]
       {\small UCDP-GED v25.1. Events and battle deaths, plus the Actor Dataset
-      for who initiates and who is targeted.}
-      \vspace{0.9em}
-
-      \textbf{Unit} \\[0.3em]
-      {\small Hexagonal grid cells, 25--300\,km. Main analysis at 100\,km:
-      3{,}658 cells, 87{,}792 cell-years.}
+      for who initiates violence and who is targeted by it.}
     \end{column}
-    \begin{column}{0.48\textwidth}
-      \includegraphics[width=\textwidth]{plots/deck/map_dark.png}
+    \begin{column}{0.5\textwidth}
+      \textbf{Unit of analysis} \\[0.3em]
+      {\small Hexagonal grid cells at seven resolutions, 25--300\,km.
+      Main analysis at 100\,km: 3{,}658 cells, 87{,}792 cell-years.}
+      \vspace{1.1em}
+
+      \begin{block}{Discoveries are rare}
+        {\small Only 6\% of cells ever record one.\\[0.3em]
+        Treated cells at 100\,km:\\
+        tantalum \textbf{25}, chromium \textbf{11}, PGMs \textbf{8}.}
+      \end{block}
     \end{column}
   \end{columns}
 \end{frame}
