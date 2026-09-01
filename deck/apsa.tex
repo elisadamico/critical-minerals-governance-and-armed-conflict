@@ -139,23 +139,28 @@
 \end{frame}
 
 \begin{frame}{Hypotheses}
-  \vspace{0.5em}
-  \begin{itemize}
-    \item[\textcolor{sage}{\textbf{H1a}}] International governance
+  \vspace{0.4em}
+  {\small Each regime gets a prediction about \textbf{how often} violence happens
+  and one about \textbf{how deadly} it is.}
+  \vspace{0.9em}
+  \begin{itemize}\setlength\itemsep{0.35em}
+    \item[\textcolor{sand}{\textbf{H1a}}] International governance
           \textbf{reduces conflict events}
-    \item[\textcolor{sage}{\textbf{H1b}}] International governance
+    \item[\textcolor{sand}{\textbf{H1b}}] International governance
           \textbf{reduces battle deaths}
-    \item[] \hspace{1em}{\small\color{muted}the frameworks were justified publicly
-            as civilian protection}
-    \item[\textcolor{sage}{\textbf{H2}}] National governance
+    \item[\textcolor{sage}{\textbf{H2a}}] National governance
           \textbf{reduces conflict events}
+    \item[\textcolor{sage}{\textbf{H2b}}] National governance
+          \textbf{reduces battle deaths}
     \item[\textcolor{lime}{\textbf{H3a}}] Governance gap
           \textbf{reduces conflict events}
     \item[\textcolor{lime}{\textbf{H3b}}] Governance gap
           \textbf{increases battle deaths}
-    \item[] \hspace{1em}{\small\color{muted}high value, no oversight, state forces
-            move in: fewer clashes but deadlier ones}
   \end{itemize}
+  \vspace{0.7em}
+  {\small\color{muted}Each follows from a different mechanism. Certification
+  defunds armed groups. State monopoly formalises extraction. Absent oversight,
+  the state secures deposits without constraint.}
 \end{frame}
 
 % ═══════════════════════════════ DATA ═══════════════════════════════════
@@ -201,13 +206,21 @@
 \end{frame}
 
 % ═══════════════════════════════ RESULTS ════════════════════════════════
-\begin{frame}{Aggregate Effects by Regime}
-  \begin{center}
-    \includegraphics[width=0.97\textwidth]{plots/deck/results_dark.png}
-  \end{center}
+\begin{frame}[standout]
+  Main results
 \end{frame}
 
-\begin{frame}{What the Aggregates Say}
+\begin{frame}{Effects by Governance Regime}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{plots/deck/regime_final_dark.png}
+  \end{center}
+  \vspace{-0.3em}
+  {\scriptsize\color{muted}Tantalum and PGMs restricted to 2001 onward, when the
+  UN Panel of Experts first named coltan and the companies trading it. Chromium
+  has no governance date and uses the full sample.}
+\end{frame}
+
+\begin{frame}{What the Results Say}
   \vspace{0.3em}
   \begin{center}
   {\small
@@ -217,117 +230,87 @@
       & \textbf{Conflict events} & \textbf{Battle deaths} \\
     \midrule
     \textcolor{sand}{Tantalum} & International
-      & $\downarrow$ $-0.20^{*}$  & $\uparrow$ $4.08$ \\[0.25em]
+      & $\downarrow$ $-0.30^{**}$  & $-1.19$ \\[0.25em]
     \textcolor{sage}{PGMs} & National
-      & $\downarrow$ $-0.23^{**}$ & $\uparrow$ $8.26$ \\[0.25em]
+      & $\downarrow$ $-0.30^{***}$ & $\downarrow$ $-2.42^{***}$ \\[0.25em]
     \textcolor{lime}{Chromium} & Gap
-      & $\downarrow$ $-0.16^{**}$ & $\uparrow$ $1.65$ \\
+      & $\downarrow$ $-0.16^{**}$  & $\uparrow$ $+1.65$ \\
     \bottomrule
   \end{tabular}}
   \end{center}
   \vspace{0.2em}
-  {\scriptsize\color{muted}Dynamic Callaway--Sant'Anna aggregates across all
-  post-treatment years, 100\,km. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
-  Effects emerge slowly; from the tenth year the chromium battle-deaths estimate
-  rises to $2.69^{**}$.}
-  \vspace{0.6em}
+  {\scriptsize\color{muted}Dynamic Callaway--Sant'Anna aggregates, 100\,km.
+  $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$. Chromium battle deaths reach
+  $+2.69^{**}$ from the tenth post-treatment year.}
+  \vspace{0.8em}
 
   \begin{columns}[T]
     \begin{column}{0.5\textwidth}
-      {\small\color{sage}\textbf{H1a, H2, H3a supported.}\\
-      Events fall under all three regimes, and the chromium result holds at
-      every spatial scale. \textbf{H3b} holds only from the tenth year.}
+      {\small\color{sage}\textbf{Events fall under all three regimes.}\\
+      H1a, H2a and H3a supported. The frequency of violence drops wherever a
+      discovery happens.}
     \end{column}
     \begin{column}{0.5\textwidth}
-      {\small\color{lime}\textbf{H1b contradicted.}\\
-      Tantalum battle deaths do not fall. They are positive at every scale and
-      significantly positive at 150\,km.}
+      {\small\color{lime}\textbf{Lethality is where they differ.}\\
+      H2b and H3b supported. \textbf{H1b is not} \textemdash{} international
+      governance does not reduce deaths.}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Defunding Works. Protection Does Not.}
-  \begin{columns}[T]
-    \begin{column}{0.5\textwidth}
-      \begin{block}{Step one holds}
-        Formal armed groups withdraw from tantalum areas, as initiators
-        ($-0.09$, SE $0.03$) and as targets ($-0.19$, SE $0.07$).
-        \\[0.4em]
-        The financing mechanism works.
-      \end{block}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \begin{alertblock}{Step two does not}
-        Civilian deaths \textbf{rise} ($+1.57$, SE $0.81$).
-        \\[0.4em]
-        Removing armed groups is not the same as protecting civilians.
-      \end{alertblock}
-    \end{column}
-  \end{columns}
-  \vspace{1em}
-  {\small Consistent with \textcolor{sage}{Stoop et al.\ (2018)} on Dodd--Frank in
-  the DRC, and with \textcolor{sage}{S\'anchez de la Sierra (2020)} on armed
-  groups as stationary bandits whose exit need not leave civilians safer.}
+\begin{frame}[standout]
+  Mechanisms
 \end{frame}
 
-\begin{frame}{Who Is Actually Affected?}
+\begin{frame}{Armed Groups Leave Where They Were Present}
   \begin{center}
-    \includegraphics[width=0.97\textwidth]{plots/deck/mech1_dark.png}
+    \includegraphics[width=0.93\textwidth]{plots/deck/rebels_dark.png}
   \end{center}
+  \vspace{-0.4em}
+  {\scriptsize\color{muted}Formal armed groups decline under both governed
+  regimes, as initiators and as targets. Chromium is not shown: no treated
+  chromium cell records formal armed group activity at any spatial scale.}
 \end{frame}
 
-\begin{frame}{The Governance Gap at Actor Level}
+\begin{frame}{Who Holds the Deposit Afterwards}
   \begin{center}
-    \includegraphics[width=0.86\textwidth]{plots/deck/mech2_dark.png}
+    \includegraphics[width=0.86\textwidth]{plots/deck/state_dark.png}
   \end{center}
-  \vspace{0.3em}
-  {\small With no armed group present to contest the deposit, securing it falls to
-  the state. The violence that follows discovery is therefore not a contest over
-  the mineral at all. It is \textcolor{lime}{the state killing civilians} in the
-  course of establishing control, which is why deaths rise even as the number of
-  clashes falls.}
+  \vspace{-0.4em}
+  {\scriptsize\color{muted}State as initiator. Events fall everywhere. Deaths are
+  flat under international governance, fall under national governance, and climb
+  after the tenth year where there is no regime.}
 \end{frame}
 
-% ═══════════════════════════════ CLOSE ══════════════════════════════════
-\begin{frame}{Robustness: Restricting to the Governance Period}
+\begin{frame}{Civilians}
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{plots/deck/regime_final_dark.png}
+    \includegraphics[width=0.86\textwidth]{plots/deck/civilians_dark.png}
   \end{center}
-  \vspace{-0.3em}
-  {\scriptsize\color{muted}Tantalum and platinum group metals are restricted to
-  2001 onward, when the UN Panel of Experts first named coltan and the companies
-  trading it; cells discovered before then are dropped. Chromium has no governance
-  date and uses the full sample. The platinum panels show the last ten
-  pre-treatment years. The tantalum events estimate strengthens under this
-  restriction, from $-0.20^{*}$ on the full panel to $-0.30^{**}$.}
+  \vspace{-0.4em}
+  {\scriptsize\color{muted}Civilian outcomes track the state panel closely, which
+  is what we would expect if the state is the actor that remains.}
 \end{frame}
 
 \begin{frame}{Conclusions}
   \vspace{0.4em}
-  \begin{itemize}
-    \item Governance structure conditions the mineral--conflict relationship.
-          One design, three regimes, three different answers.
-    \item \textcolor{sand}{\textbf{International governance works on armed
-          groups, not on civilians.}} Formal groups withdraw from tantalum
-          areas. Battle deaths do not fall and civilian deaths rise.
-    \item \textcolor{sage}{\textbf{National governance}} narrows the conflict
-          landscape by excluding organised challengers, leaving state and
-          civilian outcomes unchanged.
-    \item \textcolor{lime}{\textbf{Where there is no regime, the state fills
-          the space.}} Armed groups are absent from chromium areas entirely,
-          and what rises is state killing and civilian deaths.
-    \item \textbf{Lootability may be doing some of this work.} Tantalum is
-          artisanally mined and easily captured. PGMs and chromium are
-          industrial and are not. Our three regimes line up with three
-          extraction modes, so governance and lootability cannot be fully
-          separated with three minerals.
+  \begin{itemize}\setlength\itemsep{0.4em}
+    \item \textbf{Discovery reduces how often violence happens, under every
+          regime.} That part does not distinguish them.
+    \item \textbf{Lethality is what separates them.} Deaths fall under national
+          governance, do not move under international governance, and rise where
+          there is no regime at all.
+    \item \textbf{The difference is not how much governance, but whether state
+          control is constrained.} Licensed, regulated extraction reduces
+          killing. The same state securing an unregulated deposit does not.
+    \item \textcolor{sand}{\textbf{Certification changes who fights, not how
+          deadly the fighting is.}} Armed groups withdraw from tantalum areas,
+          but the violence that remains is no less lethal.
+    \item \textbf{Lootability cannot explain this.} PGMs and chromium are both
+          industrial, both largely South African, and they diverge.
   \end{itemize}
-  \vspace{0.8em}
+  \vspace{0.6em}
   {\small\color{muted}\textbf{Next.} Separating governance from extraction mode,
   and following these minerals from discovery into production.}
-  \vspace{0.5em}
-
-  {\color{sage}Governance changes \emph{who} fights, not always \emph{how many} die.}
 \end{frame}
 
 \begin{frame}[standout]
