@@ -220,7 +220,7 @@
 
 \begin{frame}{Effects by Governance Regime}
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{plots/deck/regime_final_dark.png}
+    \includegraphics[width=0.80\textwidth]{plots/deck/regime_final_dark.png}
   \end{center}
 \end{frame}
 
@@ -268,7 +268,7 @@
 
 \begin{frame}{Armed Groups Leave Where They Were Present}
   \begin{center}
-    \includegraphics[width=0.93\textwidth]{plots/deck/rebels_dark.png}
+    \includegraphics[width=\textwidth]{plots/deck/rebels_dark.png}
   \end{center}
   \vspace{-0.4em}
   {\scriptsize\color{muted}Formal armed groups decline under both governed
@@ -277,22 +277,46 @@
 \end{frame}
 
 \begin{frame}{Who Holds the Deposit Afterwards}
-  \begin{center}
-    \includegraphics[width=0.86\textwidth]{plots/deck/state_dark.png}
-  \end{center}
-  \vspace{-0.4em}
-  {\scriptsize\color{muted}State as initiator. Events fall everywhere. Deaths are
-  flat under international governance, fall under national governance, and climb
-  after the tenth year where there is no regime.}
+  \vspace{0.2em}
+  \begin{columns}[T]
+    \begin{column}{0.40\textwidth}
+      \vspace{0.6em}
+      {\small
+      \begin{itemize}\setlength\itemsep{0.55em}
+        \item State-initiated \textbf{events fall} under all three regimes.
+        \item \textcolor{sand}{Deaths stay flat} where governance is
+              international.
+        \item \textcolor{sage}{Deaths fall} where it is national.
+        \item \textcolor{lime}{Deaths climb} from about the tenth year where
+              there is no regime.
+      \end{itemize}}
+    \end{column}
+    \begin{column}{0.60\textwidth}
+      \centering
+      \raisebox{-\height}{\includegraphics[height=0.78\textheight]{plots/deck/state_dark.png}}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Civilians}
-  \begin{center}
-    \includegraphics[width=0.86\textwidth]{plots/deck/civilians_dark.png}
-  \end{center}
-  \vspace{-0.4em}
-  {\scriptsize\color{muted}Civilian outcomes track the state panel closely, which
-  is what we would expect if the state is the actor that remains.}
+  \vspace{0.2em}
+  \begin{columns}[T]
+    \begin{column}{0.40\textwidth}
+      \vspace{0.6em}
+      {\small
+      \begin{itemize}\setlength\itemsep{0.55em}
+        \item Civilian outcomes \textbf{track the state panel} almost exactly.
+        \item That is what we would expect if the state is the actor that
+              remains once armed groups withdraw.
+        \item The same ordering holds: \textcolor{sand}{flat},
+              \textcolor{sage}{down}, \textcolor{lime}{up}.
+      \end{itemize}}
+    \end{column}
+    \begin{column}{0.60\textwidth}
+      \centering
+      \raisebox{-\height}{\includegraphics[height=0.78\textheight]{plots/deck/civilians_dark.png}}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Conclusions}
