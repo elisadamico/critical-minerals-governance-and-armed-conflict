@@ -365,7 +365,11 @@ The actor-level decomposition shows the mechanism underlying chromium's decoupli
 
 Formal armed groups are absent altogether, so there is no armed group series to estimate. What moves instead is the state and what it does to civilians. State-initiated fatalities rise by $1.512$ (SE $0.942$), imprecisely, while fatal violence against civilians rises by $0.850$ (SE $0.431$) and deaths caused by the state specifically by $0.545$ (SE $0.255$), both significant at the five percent level. Event counts for the same actors are flat or slightly negative. Fewer encounters, and deadlier ones when they occur.
 
-The decoupling mechanism thus operates as follows. Chromium's strategic value attracts state forces to secure deposits, but the absence of governance frameworks means this securitization occurs without transparency requirements, conflict-free certification, or international oversight. The result is increased state lethality and civilian casualties in a setting where no armed challenger is present at all.
+% [PL C271] Her point: the interpretation of why state violence rises around
+% ungoverned deposits is not something the estimates themselves show, so it
+% belongs in the Discussion rather than in Results. The causal reading that sat
+% here is made there instead. Results now stops at what is measured.
+What the chromium decomposition establishes is narrower than the story usually told about resource conflict. There is no armed challenger in these cells to contest the deposit, the state is the only armed actor whose activity we can measure, and both its lethality and the toll on civilians rise after discovery.
 
 \subsubsection{Mechanism Summary}
 
@@ -500,38 +504,15 @@ We therefore report this as a check that the main results are not an artefact of
 
 \input{latex/post2010_robustness.tex}
 
-A sharper version of the same test restricts each mineral to the period in which
-its own regime existed, rather than applying a common cutoff. The international
-frameworks arrive between 2010 and 2011, while South Africa's MPRDA was enacted
-in 2002 and came into force in May 2004, so a single date treats the two tiers
-unequally. Restricting tantalum to 2010 onward and platinum group metals to 2002
-onward, and in each case dropping cells discovered before the cutoff, gives the
-estimates in Figure \ref{fig:regime_onset}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.92\textwidth]{plots/regime_onset_robustness.png}
-    \caption{Event studies restricted to the period in which each governance regime existed. Tantalum from 2010, when Dodd-Frank Section 1502 and the ITSCI pilot began, and platinum group metals from 2002, when the MPRDA was enacted. Cells discovered before the relevant cutoff are dropped, since they have no pre-treatment period inside the restricted window. Chromium has no regime date and is not shown.}
-    \label{fig:regime_onset}
-\end{figure}
-
-The two minerals behave differently under this restriction. Tantalum loses its
-result. The conflict-events estimate moves from $-0.20$ (SE $0.11$) to $-0.27$
-(SE $0.36$), so the point estimate is similar while the standard error triples,
-which is what a window of eight post-treatment years on twenty cells would
-produce. We read this as uninformative rather than as evidence against H1a.
-Platinum group metals move the other way. Conflict events strengthen to $-0.30$
-(SE $0.06$) and battle deaths, positive and insignificant on the full panel,
-become $-2.42$ (SE $0.44$).
-
-% [HOLD] Caveat paragraph removed for now at Elisa's request, pending a decision
-% on how to treat the restricted PGM estimates. What it said: the result rests on
-% five treated cells; standard errors of 0.06 and 0.44 on five clusters are not
-% credible because the multiplier bootstrap is unreliable at that number; the
-% pre-treatment coefficients drift in both platinum panels; and three of the
-% eight PGM cells are discovered before the MPRDA existed, so they are coded as
-% nationally governed at a moment when they were not. Restore or rewrite once
-% decided.
+% [CUT 7 Sep 2026] The regime-onset robustness block lived here. It restricted
+% tantalum to 2010 and PGMs to 2002 and showed event studies for those samples.
+% The main analysis now restricts each mineral to its regime period directly
+% (2001 for both governed tiers), so this duplicated the body with different
+% dates and stale full-panel numbers. Spatial robustness on the same restricted
+% samples is in Appendix \ref{sec:scales}. plots/regime_onset_robustness.png and
+% REM/scripts/robustness/28_regime_onset_robustness.R are retained in the repo.
+% The [HOLD] caveat that sat here, on the credibility of the restricted PGM
+% standard errors, is recorded in notes-private/open-questions.md.
 
 \section{Displacement: Effects in Adjacent Cells}
 \label{sec:spillover}
