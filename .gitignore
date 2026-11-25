@@ -15,3 +15,4 @@ deck/*.out
 deck/*.snm
 deck/*.toc
 *.md
+!README.md
